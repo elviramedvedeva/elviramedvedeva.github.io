@@ -133,4 +133,9 @@ footer a:hover {
     padding: 1rem;
   }
 }
+#education {
+  padding-top: 2rem;
+  border-top: 1px solid #ccc;
+}
+
 
