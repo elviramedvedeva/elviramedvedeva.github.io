@@ -1,4 +1,4 @@
-// Основная функциональность для резюме
+/ Основная функциональность для резюме
 document.addEventListener('DOMContentLoaded', function() {
   console.log('Резюме Эльвиры Медведевой загружено 🚀');
   
@@ -81,5 +81,30 @@ function copyToClipboard(text) {
   }).catch(function(err) {
     console.error('Ошибка копирования: ', err);
   });
-}
+}// Добавляем в существующий script.js
+
+// Трекинг кликов по внешним ссылкам
+document.addEventListener('DOMContentLoaded', function() {
+  // ... существующий код ...
+  
+  // Трекинг кликов по соцсетям
+  const socialLinks = document.querySelectorAll('a[href*="linkedin"], a[href*="github"]');
+  socialLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      console.log(`Переход на: ${this.href}`);
+      // Можно добавить Google Analytics или другую аналитику
+      // gtag('event', 'social_click', { 'platform': this.textContent.trim() });
+    });
+  });
+
+  // Трекинг скачивания PDF
+  const pdfDownload = document.querySelector('a[download]');
+  if (pdfDownload) {
+    pdfDownload.addEventListener('click', function() {
+      console.log('Скачивание резюме PDF');
+      // gtag('event', 'download', { 'file_type': 'pdf' });
+    });
+  }
+});
+
 
