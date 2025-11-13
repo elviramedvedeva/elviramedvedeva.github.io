@@ -101,6 +101,12 @@ function copyToClipboard(text) {
     console.error('Ошибка копирования: ', err);
   });
 }
+/* Добавьте в конец CSS файла */
+.nav-link.active {
+  background: white;
+  color: var(--primary-color);
+  border-color: white;
+}
 
 
 
