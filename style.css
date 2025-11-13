@@ -16,26 +16,34 @@ header {
   width: 120px;
   border-radius: 50%;
   margin-bottom: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 main {
+  max-width: 800px;
+  margin: 0 auto;
   padding: 2rem;
 }
 
 section {
   margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 h2 {
   color: #0077cc;
+  font-size: 1.5rem;
+  margin-top: 0;
 }
 
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #e0e0e0;
-  font-size: 0.9rem;
-}
 a {
   color: #0077cc;
   text-decoration: none;
@@ -46,73 +54,25 @@ a:hover {
   text-decoration: underline;
 }
 
-h1 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-h2 {
-  margin-top: 2rem;
-  font-size: 1.5rem;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f9f9f9;
-  color: #333;
-}
-
-header, footer {
-  text-align: center;
-  padding: 2rem;
-  background-color: #e0e0e0;
-}
-
-.profile-photo {
-  width: 120px;
-  border-radius: 50%;
-  margin-bottom: 1rem;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
 nav {
   margin-top: 1rem;
 }
 
 nav a {
   margin: 0 1rem;
-  color: #0077cc;
-  text-decoration: none;
-  font-weight: bold;
 }
 
-nav a:hover {
-  text-decoration: underline;
-}
-
-main {
+footer {
+  text-align: center;
   padding: 2rem;
+  background-color: #e0e0e0;
+  font-size: 0.9rem;
 }
 
-section {
-  margin-bottom: 2rem;
-}
-
-h2 {
-  color: #0077cc;
-  font-size: 1.5rem;
-}
-
-footer a {
-  color: #0077cc;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
+/* Секции с разделителями */
+#about, #projects, #education {
+  border-top: 1px solid #ccc;
+  padding-top: 2rem;
 }
 
 @media (max-width: 600px) {
@@ -126,26 +86,17 @@ footer a:hover {
   }
 
   .profile-photo {
-    width: 80px;
+    width: 100px;
   }
 
   main {
     padding: 1rem;
   }
-}
-#education {
-  padding-top: 2rem;
-  border-top: 1px solid #ccc;
-}
-
-#about {
-  padding-top: 2rem;
-  border-top: 1px solid #ccc;
+  
+  section {
+    padding: 1rem;
+  }
 }
 
-#projects {
-  padding-top: 2rem;
-  border-top: 1px solid #ccc;
-}
 
 
