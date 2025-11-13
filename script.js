@@ -1,4 +1,4 @@
-/ Основная функциональность для резюме
+// Основная функциональность для резюме
 document.addEventListener('DOMContentLoaded', function() {
   console.log('Резюме Эльвиры Медведевой загружено 🚀');
   
@@ -72,21 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentYear = new Date().getFullYear();
     copyrightElement.textContent = `© ${currentYear} Эльвира Медведева`;
   }
-});
 
-// Дополнительные утилиты
-function copyToClipboard(text) {
-  navigator.clipboard.writeText(text).then(function() {
-    console.log('Текст скопирован: ' + text);
-  }).catch(function(err) {
-    console.error('Ошибка копирования: ', err);
-  });
-}// Добавляем в существующий script.js
-
-// Трекинг кликов по внешним ссылкам
-document.addEventListener('DOMContentLoaded', function() {
-  // ... существующий код ...
-  
   // Трекинг кликов по соцсетям
   const socialLinks = document.querySelectorAll('a[href*="linkedin"], a[href*="github"]');
   socialLinks.forEach(link => {
@@ -106,5 +92,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+// Дополнительные утилиты
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(function() {
+    console.log('Текст скопирован: ' + text);
+  }).catch(function(err) {
+    console.error('Ошибка копирования: ', err);
+  });
+}
 
 
