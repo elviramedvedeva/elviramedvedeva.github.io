@@ -570,3 +570,72 @@ body {
     font-size: 0.9rem;
   }
 }
+/* Дополнительные стили для контактов */
+.contact-card {
+  position: relative;
+  min-height: 140px;
+}
+
+.contact-detail {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-top: 0.5rem;
+  word-break: break-word;
+  text-align: center;
+}
+
+/* Специальные стили для email */
+.email-card {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+}
+
+.email-card:hover {
+  background: linear-gradient(135deg, #1d4ed8, #1e40af);
+}
+
+/* Специальные стили для телефона */
+.phone-card {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+}
+
+.phone-card:hover {
+  background: linear-gradient(135deg, #059669, #047857);
+}
+
+/* Специальные стили для LinkedIn */
+.linkedin-card {
+  background: #0077b5;
+  color: white;
+}
+
+.linkedin-card:hover {
+  background: #005885;
+}
+
+/* Специальные стили для GitHub */
+.github-card {
+  background: #333;
+  color: white;
+}
+
+.github-card:hover {
+  background: #000;
+}
+
+/* Блок цели в хедере - две строки */
+.career-goal p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.career-goal p:first-child {
+  margin-top: 0;
+}
+
+.career-goal p:last-child {
+  margin-bottom: 0;
+}
