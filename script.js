@@ -1,4 +1,4 @@
-// Основная функциональность для резюме
+// Резюме Эльвиры Медведевой - основной функционал
 document.addEventListener('DOMContentLoaded', function() {
   console.log('Резюме Эльвиры Медведевой загружено 🚀');
   
@@ -62,7 +62,6 @@ document.addEventListener('DOMContentLoaded', function() {
   if (downloadBtn) {
     downloadBtn.addEventListener('click', function(e) {
       console.log('Скачивание резюме...');
-      // Можно добавить аналитику здесь
     });
   }
 
@@ -78,22 +77,24 @@ document.addEventListener('DOMContentLoaded', function() {
   socialLinks.forEach(link => {
     link.addEventListener('click', function(e) {
       console.log(`Переход на: ${this.href}`);
-      // Можно добавить Google Analytics или другую аналитику
-      // gtag('event', 'social_click', { 'platform': this.textContent.trim() });
     });
   });
+});
 
-  // Трекинг скачивания PDF
-  const pdfDownload = document.querySelector('a[download]');
-  if (pdfDownload) {
-    pdfDownload.addEventListener('click', function() {
-      console.log('Скачивание резюме PDF');
-      // gtag('event', 'download', { 'file_type': 'pdf' });
-    });
+// =============================================
+// ФИКС ДЛЯ УСТАРЕВШИХ UNLOAD EVENT LISTENERS
+// =============================================
+
+// Современная альтернатива для аналитики при уходе со страницы
+document.addEventListener('visibilitychange', function() {
+  if (document.visibilityState === 'hidden') {
+    // Выполняем финальные действия когда страница становится невидимой
+    console.log('👋 Пользователь уходит со страницы');
+    // Здесь можно добавить отправку аналитики
   }
 });
 
-// Дополнительные утилиты
+// Утилиты
 function copyToClipboard(text) {
   navigator.clipboard.writeText(text).then(function() {
     console.log('Текст скопирован: ' + text);
@@ -101,41 +102,3 @@ function copyToClipboard(text) {
     console.error('Ошибка копирования: ', err);
   });
 }
-
-// Заменяем устаревшие unload события на современные альтернативы
-function fixUnloadEvents() {
-  const originalAddEventListener = EventTarget.prototype.addEventListener;
-  
-  EventTarget.prototype.addEventListener = function(type, listener, options) {
-    // Заменяем 'unload' на 'pagehide' - современную альтернативу
-    if (type === 'unload') {
-      console.warn('🔄 Заменяем устаревший unload на pagehide');
-      type = 'pagehide';
-    }
-    
-    return originalAddEventListener.call(this, type, listener, options);
-  };
-}
-
-// Запускаем фикс после полной загрузки страницы
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', fixUnloadEvents);
-} else {
-  fixUnloadEvents();
-}
-
-// Также обрабатываем beforeunload события более аккуратно
-window.addEventListener('beforeunload', function(e) {
-  // Не блокируем навигацию, просто выполняем необходимую логику
-  console.log('📄 Страница закрывается...');
-  // Здесь можно добавить отправку аналитики, но без e.preventDefault()
-});
-
-// Современная альтернатива для аналитики и очистки
-document.addEventListener('visibilitychange', function() {
-  if (document.visibilityState === 'hidden') {
-    // Выполняем финальные действия когда страница становится невидимой
-    console.log('👋 Пользователь уходит со страницы');
-    // Ваша логика очистки или отправки данных
-  }
-});
