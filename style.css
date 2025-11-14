@@ -565,3 +565,49 @@ body {
     font-size: 0.9rem;
   }
 }
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.contact-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #0f172a;
+  background: #f8fafc;
+  box-shadow: 0 1px 0 rgba(15,23,42,0.04);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  min-width: 180px;
+}
+
+.contact-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(2,6,23,0.12);
+}
+
+/* Акцентные цвета */
+.contact-email { background: linear-gradient(180deg, #eaf2ff, #ffffff); border: 1px solid rgba(37,99,235,0.12); }
+.contact-email .contact-icon { background: #2563eb; color: #fff; padding: 6px; border-radius: 8px; }
+
+.contact-phone { background: linear-gradient(180deg, #ecfdf5, #ffffff); border: 1px solid rgba(5,150,105,0.12); }
+.contact-phone .contact-icon { background: #059669; color: #fff; padding: 6px; border-radius: 8px; }
+
+/* Нейтральные для остальных */
+.contact-link { background: #ffffff; border: 1px solid rgba(2,6,23,0.06); }
+.contact-link .contact-icon { background: #0f172a; color: #fff; padding: 6px; border-radius: 8px; }
+
+.contact-pdf { background: linear-gradient(180deg, #fff7ed, #ffffff); border: 1px solid rgba(249,115,22,0.12); }
+.contact-pdf .contact-icon { background: #f97316; color: #fff; padding: 6px; border-radius: 8px; }
+
+/* Текст внутри карточек */
+.contact-label { font-weight: 600; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* Адаптивность */
+@media (max-width: 640px) {
+  .contact-card { min-width: 100%; justify-content: flex-start; }
+}
