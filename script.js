@@ -101,3 +101,41 @@ function copyToClipboard(text) {
     console.error('Ошибка копирования: ', err);
   });
 }
+
+// Заменяем устаревшие unload события на современные альтернативы
+function fixUnloadEvents() {
+  const originalAddEventListener = EventTarget.prototype.addEventListener;
+  
+  EventTarget.prototype.addEventListener = function(type, listener, options) {
+    // Заменяем 'unload' на 'pagehide' - современную альтернативу
+    if (type === 'unload') {
+      console.warn('🔄 Заменяем устаревший unload на pagehide');
+      type = 'pagehide';
+    }
+    
+    return originalAddEventListener.call(this, type, listener, options);
+  };
+}
+
+// Запускаем фикс после полной загрузки страницы
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', fixUnloadEvents);
+} else {
+  fixUnloadEvents();
+}
+
+// Также обрабатываем beforeunload события более аккуратно
+window.addEventListener('beforeunload', function(e) {
+  // Не блокируем навигацию, просто выполняем необходимую логику
+  console.log('📄 Страница закрывается...');
+  // Здесь можно добавить отправку аналитики, но без e.preventDefault()
+});
+
+// Современная альтернатива для аналитики и очистки
+document.addEventListener('visibilitychange', function() {
+  if (document.visibilityState === 'hidden') {
+    // Выполняем финальные действия когда страница становится невидимой
+    console.log('👋 Пользователь уходит со страницы');
+    // Ваша логика очистки или отправки данных
+  }
+});
