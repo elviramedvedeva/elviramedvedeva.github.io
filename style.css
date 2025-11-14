@@ -625,3 +625,22 @@ body {
     word-break: break-all;
   }
 }
+/* Исправление для email переноса */
+.email-card .contact-detail {
+  word-break: break-all;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  letter-spacing: -0.2px;
+}
+
+@media (max-width: 480px) {
+  .email-card .contact-detail {
+    font-size: 0.7rem;
+    word-break: break-all;
+  }
+}
+
+/* Для 4 колонок в навыках */
+.skills-grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
