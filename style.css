@@ -644,3 +644,53 @@ body {
 .skills-grid {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
+/* Стили для блока тестирования */
+.testing-platforms {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.testing-title {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.platforms-grid {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.platform-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  min-width: 80px;
+}
+
+.platform-icon {
+  font-size: 1.5rem;
+}
+
+/* Для мобильных */
+@media (max-width: 768px) {
+  .platforms-grid {
+    gap: 1rem;
+  }
+  
+  .platform-item {
+    min-width: 70px;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+  
+  .platform-icon {
+    font-size: 1.25rem;
+  }
+}
