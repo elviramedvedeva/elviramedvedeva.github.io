@@ -974,7 +974,9 @@ body {
   color: #cbd5e1;
   opacity: 0.8;
 }
-
+.dark-theme .main-footer {
+  border-top: none; /* Убираем верхнюю границу */
+}
 /* ===== КНОПКА ТЕМЫ - ИСПРАВЛЕНИЕ ВЫРАВНИВАНИЯ ===== */
 .theme-toggle {
   position: fixed;
