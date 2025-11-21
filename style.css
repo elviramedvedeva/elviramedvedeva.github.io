@@ -975,7 +975,7 @@ body {
   opacity: 0.8;
 }
 
-/* ===== КНОПКА ТЕМЫ - ЦЕНТРИРОВАНИЕ ===== */
+/* ===== КНОПКА ТЕМЫ - ИСПРАВЛЕНИЕ ВЫРАВНИВАНИЯ ===== */
 .theme-toggle {
   position: fixed;
   top: 1rem;
@@ -994,6 +994,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 0;
+  line-height: 1;
 }
 
 .theme-toggle .theme-icon {
@@ -1002,13 +1003,15 @@ body {
   justify-content: center;
   width: 100%;
   height: 100%;
-  line-height: 1;
   margin: 0;
+  padding: 0;
+  transform: translate(0, 0); /* Сбрасываем любые трансформации */
 }
 
-.theme-toggle:hover {
-  transform: scale(1.1);
-  background: var(--primary-dark);
+/* Убедимся, что эмодзи отображается правильно */
+.theme-toggle .theme-icon {
+  font-size: 1.3em; /* Чуть уменьшим если нужно */
+  text-align: center;
 }
 
 /* ===== ПРОГРЕСС-БАР В ХЕДЕРЕ ===== */
