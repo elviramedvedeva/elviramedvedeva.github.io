@@ -927,7 +927,55 @@ body {
   border-color: var(--border-color);
 }
 
-/* ===== КНОПКА ТЕМЫ ===== */
+/* ===== ФУТЕР В ТЕМНОЙ ТЕМЕ ===== */
+.dark-theme .main-footer {
+  background: #1e293b; /* Темный фон как у контентных секций */
+  color: #f8fafc;
+  border-top: 1px solid #334155;
+}
+
+.dark-theme .career-goal-footer {
+  background: rgba(255, 255, 255, 0.1);
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.dark-theme .testing-platforms {
+  color: #f8fafc;
+}
+
+.dark-theme .testing-title {
+  color: #f8fafc;
+}
+
+.dark-theme .platform-item {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.08));
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.dark-theme .platform-name {
+  color: #f8fafc;
+}
+
+.dark-theme .platform-item:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.12));
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.dark-theme .platform-item:hover .platform-name {
+  color: white;
+}
+
+.dark-theme .main-footer p:not(.career-goal-footer):not(.footer-copyright) {
+  color: #e2e8f0;
+}
+
+.dark-theme .footer-copyright {
+  color: #cbd5e1;
+  opacity: 0.8;
+}
+
+/* ===== КНОПКА ТЕМЫ - ЦЕНТРИРОВАНИЕ ===== */
 .theme-toggle {
   position: fixed;
   top: 1rem;
@@ -945,6 +993,17 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
+}
+
+.theme-toggle .theme-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  line-height: 1;
+  margin: 0;
 }
 
 .theme-toggle:hover {
@@ -1003,6 +1062,42 @@ body {
   100% { transform: translateX(100%); }
 }
 
+.progress-stats {
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+}
+
+/* ===== УЛУЧШЕННЫЕ ИНСТРУМЕНТЫ ===== */
+.skill-list li[data-tool] {
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.skill-list li[data-tool]:hover {
+  transform: translateX(8px);
+  color: var(--primary-color);
+}
+
+.skill-list li[data-tool]:hover::after {
+  content: attr(data-company);
+  position: absolute;
+  right: 0;
+  background: var(--accent-color);
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
 .progress-stats {
   font-size: 0.8rem;
   margin-top: 0.3rem;
