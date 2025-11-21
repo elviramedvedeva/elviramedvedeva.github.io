@@ -864,3 +864,42 @@ body {
     font-size: 1.4rem;
   }
 }
+/* Анимация для списка навыков */
+.skill-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+  padding-left: 1.5rem;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.skill-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+/* Микро-анимация при наведении */
+.skill-list li:hover {
+  transform: translateX(8px);
+  color: var(--primary-color);
+}
+
+.skill-list li:hover::before {
+  transform: scale(1.2);
+  color: var(--accent-color);
+}
+
+/* Анимация для карточек */
+.tool-item {
+  transition: all 0.3s ease;
+}
+
+.tool-item:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
