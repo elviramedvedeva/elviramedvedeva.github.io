@@ -10,6 +10,11 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Кнопка переключения темы -->
+  <button class="theme-toggle" aria-label="Переключить тему" id="themeToggle">
+    <span class="theme-icon">🌙</span>
+  </button>
+
   <!-- Хедер с градиентом -->
   <header class="main-header">
     <div class="container">
@@ -40,6 +45,15 @@
         <a href="#education" class="nav-link">Образование</a>
         <a href="#contact" class="nav-link">Контакты</a>
       </nav>
+      
+      <!-- Прогресс-бар тестирования -->
+      <div class="qa-progress-container">
+        <div class="progress-label">QA Progress</div>
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: 85%"></div>
+        </div>
+        <div class="progress-stats">85% coverage</div>
+      </div>
     </div>
   </header>
 
@@ -85,13 +99,14 @@
         </div>
         
         <div class="skill-category">
-          <h3>Инструменты</h3>
+          <h3>🛠️ Инструменты</h3>
           <ul class="skill-list">
-            <li>Jira, Trello</li>
-            <li>Chrome DevTools</li>
-            <li>Postman</li>
-            <li>Git, GitHub</li>
-            <li>TestRail</li>
+            <li data-tool="Jira" data-company="Atlassian">🎯 Jira</li>
+            <li data-tool="Trello" data-company="Atlassian">📋 Trello</li>
+            <li data-tool="Chrome DevTools" data-company="Google">🔧 Chrome DevTools</li>
+            <li data-tool="Postman" data-company="Postman Inc">📮 Postman</li>
+            <li data-tool="GitHub" data-company="Microsoft">🐙 Git, GitHub</li>
+            <li data-tool="TestRail" data-company="Gurock">📊 TestRail</li>
           </ul>
         </div>
         
@@ -123,7 +138,8 @@
       <div class="projects-grid">
         <div class="project-card">
           <h3>Учебные проекты</h3>
-          <p>Практика тестирования различных веб-приложений и мобильных приложений в рамках обучения.</p>
+          <p>Практика тестирования различных веб-приложений </p> 
+           <p>Практика тестирования мобильных приложений </p>
           <ul class="project-features">
             <li>Функциональное тестирование</li>
             <li>UI/UX тестирование</li>
@@ -143,7 +159,7 @@
           <span class="education-date">Окт 2025 - Янв 2026</span>
         </div>
         <div class="education-institution">IT-Academy & онлайн курсы</div>
-        <p>Прохождение курсов по тестированию программного обеспечения. Изучение основ тестирования, методологий, инструментов и лучших практик в QA.</p>
+        
         <div class="education-details">
           <span class="detail-tag">QA Fundamentals</span>
           <span class="detail-tag">Manual Testing</span>
@@ -216,44 +232,44 @@
   </main>
 
   <footer class="main-footer">
-  <div class="container">
-    <p>Готовность к работе: <strong>немедленная</strong> | Формат: <strong>полный день, офис/гибрид/удалённо</strong></p>
-    
-    <!-- Блок "Протестировано на" -->
-    <div class="testing-platforms">
-      <p class="testing-title">🧪 Протестировано на:</p>
-      <div class="platforms-grid">
-        <div class="platform-item" title="Google Chrome">
-          <span class="platform-icon" aria-hidden="true">🌐</span>
-          <span class="platform-name">Chrome</span>
-        </div>
-        <div class="platform-item" title="Mozilla Firefox">
-          <span class="platform-icon" aria-hidden="true">🦊</span>
-          <span class="platform-name">Firefox</span>
-        </div>
-        <div class="platform-item" title="Apple Safari">
-          <span class="platform-icon" aria-hidden="true">🍎</span>
-          <span class="platform-name">Safari</span>
-        </div>
-        <div class="platform-item" title="Microsoft Windows">
-          <span class="platform-icon" aria-hidden="true">🪟</span>
-          <span class="platform-name">Windows</span>
-        </div>
-        <div class="platform-item" title="Apple iOS">
-          <span class="platform-icon" aria-hidden="true">📱</span>
-          <span class="platform-name">iOS</span>
-        </div>
-        <div class="platform-item" title="Google Android">
-          <span class="platform-icon" aria-hidden="true">🤖</span>
-          <span class="platform-name">Android</span>
+    <div class="container">
+      <p>Готовность к работе: <strong>немедленная</strong> | Формат: <strong>полный день, офис/гибрид/удалённо</strong></p>
+      
+      <!-- Блок "Протестировано на" -->
+      <div class="testing-platforms">
+        <p class="testing-title">🧪 Протестировано на:</p>
+        <div class="platforms-grid">
+          <div class="platform-item" title="Google Chrome">
+            <span class="platform-icon" aria-hidden="true">🌐</span>
+            <span class="platform-name">Chrome</span>
+          </div>
+          <div class="platform-item" title="Mozilla Firefox">
+            <span class="platform-icon" aria-hidden="true">🦊</span>
+            <span class="platform-name">Firefox</span>
+          </div>
+          <div class="platform-item" title="Apple Safari">
+            <span class="platform-icon" aria-hidden="true">🍎</span>
+            <span class="platform-name">Safari</span>
+          </div>
+          <div class="platform-item" title="Microsoft Windows">
+            <span class="platform-icon" aria-hidden="true">🪟</span>
+            <span class="platform-name">Windows</span>
+          </div>
+          <div class="platform-item" title="Apple iOS">
+            <span class="platform-icon" aria-hidden="true">📱</span>
+            <span class="platform-name">iOS</span>
+          </div>
+          <div class="platform-item" title="Google Android">
+            <span class="platform-icon" aria-hidden="true">🤖</span>
+            <span class="platform-name">Android</span>
+          </div>
         </div>
       </div>
-    </div>
 
-    <p class="career-goal-footer">🔎 Ищу стажировку или junior-позицию в QA</p>
-    <p class="footer-copyright">© 2025 Эльвира Медведева</p>
-  </div>
-</footer>
+      <p class="career-goal-footer">🔎 Ищу стажировку или junior-позицию в QA</p>
+      <p class="footer-copyright">© 2025 Эльвира Медведева</p>
+    </div>
+  </footer>
   
   <script src="script.js"></script>
 </body>

@@ -96,3 +96,59 @@ function copyToClipboard(text) {
     console.error('Ошибка копирования: ', err);
   });
 }
+// Переключение темы
+const themeToggle = document.getElementById('themeToggle');
+
+// Проверяем сохранённую тему
+if (localStorage.getItem('theme') === 'dark') {
+  document.body.classList.add('dark-theme');
+  themeToggle.innerHTML = '☀️';
+}
+
+themeToggle.addEventListener('click', function() {
+  document.body.classList.toggle('dark-theme');
+  
+  if (document.body.classList.contains('dark-theme')) {
+    localStorage.setItem('theme', 'dark');
+    this.innerHTML = '☀️';
+  } else {
+    localStorage.setItem('theme', 'light');
+    this.innerHTML = '🌙';
+  }
+});
+
+// Анимация прогресс-бара
+function animateProgressBar() {
+  const progressBar = document.querySelector('.progress-bar');
+  if (progressBar) {
+    let width = 0;
+    const targetWidth = 85;
+    const interval = setInterval(() => {
+      if (width >= targetWidth) {
+        clearInterval(interval);
+      } else {
+        width++;
+        progressBar.style.width = width + '%';
+        document.querySelector('.progress-stats').textContent = width + '% coverage';
+      }
+    }, 20);
+  }
+}
+
+// Запускаем анимацию прогресс-бара при загрузке
+document.addEventListener('DOMContentLoaded', function() {
+  // ... ваш существующий код ...
+  
+  // Анимация прогресс-бара
+  setTimeout(animateProgressBar, 1000);
+  
+  // Интерактивность для инструментов
+  const toolItems = document.querySelectorAll('.skill-list li[data-tool]');
+  toolItems.forEach(item => {
+    item.addEventListener('click', function() {
+      const tool = this.getAttribute('data-tool');
+      const company = this.getAttribute('data-company');
+      console.log(`Инструмент: ${tool}, Компания: ${company}`);
+    });
+  });
+});
