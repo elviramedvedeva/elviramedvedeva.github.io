@@ -4,11 +4,12 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Переключение темы
   const themeToggle = document.getElementById('themeToggle');
+  const themeIcon = themeToggle.querySelector('.theme-icon');
   
   // Проверяем сохранённую тему
   if (localStorage.getItem('theme') === 'dark') {
     document.body.classList.add('dark-theme');
-    themeToggle.innerHTML = '☀️';
+    themeIcon.textContent = '☀️';
   }
 
   themeToggle.addEventListener('click', function() {
@@ -16,10 +17,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (document.body.classList.contains('dark-theme')) {
       localStorage.setItem('theme', 'dark');
-      this.innerHTML = '☀️';
+      themeIcon.textContent = '☀️';
     } else {
       localStorage.setItem('theme', 'light');
-      this.innerHTML = '🌙';
+      themeIcon.textContent = '🌙';
     }
   });
 
@@ -83,6 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (downloadBtn) {
     downloadBtn.addEventListener('click', function(e) {
       console.log('Скачивание резюме...');
+      // Здесь можно добавить аналитику
     });
   }
 
@@ -101,8 +103,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
- 
-  
   // Интерактивность для инструментов
   const toolItems = document.querySelectorAll('.skill-list li[data-tool]');
   toolItems.forEach(item => {
@@ -110,6 +110,15 @@ document.addEventListener('DOMContentLoaded', function() {
       const tool = this.getAttribute('data-tool');
       const company = this.getAttribute('data-company');
       console.log(`Инструмент: ${tool}, Компания: ${company}`);
+    });
+  });
+
+  // Интерактивность для платформ тестирования
+  const platformItems = document.querySelectorAll('.platform-item');
+  platformItems.forEach(item => {
+    item.addEventListener('click', function() {
+      const platform = this.querySelector('.platform-name').textContent;
+      console.log(`Платформа тестирования: ${platform}`);
     });
   });
 });
