@@ -1129,3 +1129,26 @@ body {
     width: fit-content;
   }
 }
+
+.self-education-list {
+  list-style: none;
+  margin: 1rem 0;
+}
+
+.self-education-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+  padding-left: 2rem;
+  position: relative;
+}
+
+.self-education-list li::before {
+  content: '🎯';
+  position: absolute;
+  left: 0.5rem;
+  font-weight: bold;
+}
+
+.dark-theme .self-education-list li {
+  border-bottom-color: #334155;
+}
