@@ -1035,3 +1035,26 @@ body {
     font-size: 1.4rem;
   }
 }
+
+/* Исправление для email переноса */
+.email-card .contact-detail {
+  word-break: break-all;
+  font-size: 0.7rem;
+  line-height: 1.2;
+  letter-spacing: -0.1px;
+  word-spacing: -0.2px;
+  hyphens: manual;
+}
+
+@media (max-width: 480px) {
+  .email-card .contact-detail {
+    font-size: 0.65rem;
+    word-break: break-all;
+  }
+}
+
+@media (max-width: 360px) {
+  .email-card .contact-detail {
+    font-size: 0.6rem;
+  }
+}
