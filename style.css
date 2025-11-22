@@ -1130,25 +1130,95 @@ body {
   }
 }
 
+/* Улучшаем стили для образования */
+.education-item {
+  background: var(--bg-light);
+  padding: 2rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.education-header h3 {
+  color: var(--primary-color);
+  flex: 1;
+  margin: 0;
+}
+
+.education-date {
+  background: var(--primary-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.education-institution {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.education-details {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.detail-tag {
+  background: var(--accent-color);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Улучшаем список самообразования */
 .self-education-list {
   list-style: none;
-  margin: 1rem 0;
+  margin: 1.5rem 0;
 }
 
 .self-education-list li {
-  padding: 0.5rem 0;
+  padding: 0.8rem 0;
   border-bottom: 1px solid var(--border-color);
-  padding-left: 2rem;
+  padding-left: 2.5rem;
   position: relative;
+  line-height: 1.4;
 }
 
 .self-education-list li::before {
   content: '🎯';
   position: absolute;
-  left: 0.5rem;
-  font-weight: bold;
+  left: 0.8rem;
+  font-size: 1rem;
 }
 
+.self-education-list li:last-child {
+  border-bottom: none;
+}
+
+/* Для темной темы */
 .dark-theme .self-education-list li {
   border-bottom-color: #334155;
+}
+
+.dark-theme .education-item {
+  background: var(--bg-light);
+  border: 1px solid var(--border-color);
 }
