@@ -101,28 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Анимация прогресс-бара
-  function animateProgressBar() {
-    const progressBar = document.querySelector('.progress-bar');
-    const progressStats = document.querySelector('.progress-stats');
-    
-    if (progressBar && progressStats) {
-      let width = 0;
-      const targetWidth = 85;
-      const interval = setInterval(() => {
-        if (width >= targetWidth) {
-          clearInterval(interval);
-        } else {
-          width++;
-          progressBar.style.width = width + '%';
-          progressStats.textContent = width + '% coverage';
-        }
-      }, 20);
-    }
-  }
-
-  // Запускаем анимацию прогресс-бара
-  setTimeout(animateProgressBar, 1000);
+ 
   
   // Интерактивность для инструментов
   const toolItems = document.querySelectorAll('.skill-list li[data-tool]');
