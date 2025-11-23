@@ -1036,25 +1036,23 @@ body {
   }
 }
 
-/* Исправление для email переноса */
 .email-card .contact-detail {
   word-break: break-all;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   line-height: 1.2;
-  letter-spacing: -0.1px;
-  word-spacing: -0.2px;
-  hyphens: manual;
+  text-align: left; /* Сдвигаем влево */
+  width: 100%;
+  padding-left: 0.5rem; /* Отступ слева */
+  padding-right: 0.5rem;
+  box-sizing: border-box;
 }
 
+/* Для мобильных */
 @media (max-width: 480px) {
   .email-card .contact-detail {
-    font-size: 0.65rem;
-    word-break: break-all;
-  }
-}
-
-@media (max-width: 360px) {
-  .email-card .contact-detail {
-    font-size: 0.6rem;
+    font-size: 0.7rem;
+    text-align: left;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
   }
 }
