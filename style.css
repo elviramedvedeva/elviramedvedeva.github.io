@@ -1055,3 +1055,83 @@ body {
     word-break: break-all;
   }
 }
+
+/* Улучшаем сетку навыков */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* Выравниваем высоту карточек */
+.skill-category {
+  background: var(--bg-light);
+  padding: 1.5rem;
+  border-radius: 15px;
+  border-left: 4px solid var(--primary-color);
+  animation: fadeInUp 0.6s ease-out;
+  height: fit-content;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Равномерно распределяем списки */
+.skill-list {
+  list-style: none;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.skill-list li {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+  padding-left: 1.8rem;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.skill-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.skill-list li:last-child {
+  border-bottom: none;
+}
+
+/* Для карточек с меньшим количеством пунктов */
+.skill-category:has(li:nth-child(3)) .skill-list {
+  justify-content: flex-start;
+}
+
+.skill-category:has(li:nth-child(3)) .skill-list li {
+  min-height: 44px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .skill-category {
+    min-height: auto;
+    padding: 1.5rem;
+  }
+  
+  .skill-list li {
+    padding: 0.7rem 0;
+    min-height: auto;
+  }
+}
