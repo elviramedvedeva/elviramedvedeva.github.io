@@ -1036,23 +1036,22 @@ body {
   }
 }
 
+ .email-card .contact-detail {
+    font-size: 0.75rem;
+    word-break: break-all;
+  }
+
+/* Исправление для email переноса */
 .email-card .contact-detail {
   word-break: break-all;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   line-height: 1.2;
-  text-align: left; /* Сдвигаем влево */
-  width: 100%;
-  padding-left: 0.5rem; /* Отступ слева */
-  padding-right: 0.5rem;
-  box-sizing: border-box;
+  letter-spacing: -0.2px;
 }
 
-/* Для мобильных */
 @media (max-width: 480px) {
   .email-card .contact-detail {
     font-size: 0.7rem;
-    text-align: left;
-    padding-left: 0.3rem;
-    padding-right: 0.3rem;
+    word-break: break-all;
   }
 }
