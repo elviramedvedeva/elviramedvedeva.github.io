@@ -1,4 +1,4 @@
-// Language texts database
+// Language texts database (оставляем на случай если понадобится)
 const translations = {
   en: {
     // Navigation
@@ -54,31 +54,80 @@ const translations = {
   }
 };
 
-// Updated changeLanguage function
-function changeLanguage(lang) {
-  const content = document.querySelector('main');
+// Theme toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const themeToggle = document.getElementById('themeToggle');
+  const themeIcon = themeToggle.querySelector('.theme-icon');
   
-  // Add fade-out animation
-  content.style.opacity = '0';
-  content.style.transform = 'translateY(20px)';
+  // Check for saved theme or prefer color scheme
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   
-  setTimeout(() => {
-    // Change all texts
-    document.querySelectorAll('[data-translate]').forEach(element => {
-      const key = element.getAttribute('data-translate');
-      if (translations[lang][key]) {
-        element.innerHTML = translations[lang][key];
+  if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+    document.body.classList.add('dark-theme');
+    themeIcon.textContent = '☀️';
+  }
+  
+  // Theme toggle event
+  themeToggle.addEventListener('click', function() {
+    document.body.classList.toggle('dark-theme');
+    
+    if (document.body.classList.contains('dark-theme')) {
+      localStorage.setItem('theme', 'dark');
+      themeIcon.textContent = '☀️';
+    } else {
+      localStorage.setItem('theme', 'light');
+      themeIcon.textContent = '🌙';
+    }
+  });
+  
+  // Smooth scrolling for navigation links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
       }
     });
+  });
+  
+  // Add intersection observer for fade-in animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+  
+  // Observe all content sections
+  document.querySelectorAll('.content-section').forEach(section => {
+    section.style.opacity = '0';
+    section.style.transform = 'translateY(20px)';
+    section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(section);
+  });
+  
+  // Tool hover effects
+  document.querySelectorAll('[data-tool]').forEach(tool => {
+    tool.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateX(8px)';
+      this.style.color = 'var(--primary-color)';
+    });
     
-    // Update HTML lang attribute
-    document.documentElement.lang = lang;
-    
-    // Save language preference
-    localStorage.setItem('language', lang);
-    
-    // Fade-in animation
-    content.style.opacity = '1';
-    content.style.transform = 'translateY(0)';
-  }, 300);
-}
+    tool.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateX(0)';
+      this.style.color = '';
+    });
+  });
+});
