@@ -1,12 +1,12 @@
-// Резюме Эльвиры Медведевой - основной функционал
+// Elvira Medvedeva Resume - main functionality
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('Резюме Эльвиры Медведевой загружено 🚀');
+  console.log('Elvira Medvedeva Resume loaded 🚀');
   
-  // Переключение темы
+  // Theme toggle
   const themeToggle = document.getElementById('themeToggle');
   const themeIcon = themeToggle.querySelector('.theme-icon');
   
-  // Проверяем сохранённую тему
+  // Check saved theme
   if (localStorage.getItem('theme') === 'dark') {
     document.body.classList.add('dark-theme');
     themeIcon.textContent = '☀️';
@@ -24,7 +24,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Плавное появление элементов при скролле
+  // Language switcher
+  const langButtons = document.querySelectorAll('.lang-btn');
+  
+  langButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const lang = this.dataset.lang;
+      
+      // Remove active class from all buttons
+      langButtons.forEach(b => b.classList.remove('active'));
+      // Add active class to clicked button
+      this.classList.add('active');
+      
+      // Change page language
+      changeLanguage(lang);
+    });
+  });
+
+  // Smooth scroll appearance
   const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -39,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }, observerOptions);
 
-  // Наблюдаем за всеми секциями
+  // Observe all sections
   document.querySelectorAll('.content-section').forEach(section => {
     section.style.opacity = '0';
     section.style.transform = 'translateY(20px)';
@@ -47,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
     observer.observe(section);
   });
 
-  // Подсветка активного пункта навигации
+  // Navigation highlighting
   const sections = document.querySelectorAll('.content-section');
   const navLinks = document.querySelectorAll('.nav-link');
 
@@ -73,68 +90,76 @@ document.addEventListener('DOMContentLoaded', function() {
 
   window.addEventListener('scroll', highlightNavLink);
 
-  // Анимация для карточек навыков
+  // Skills cards animation
   const skillCards = document.querySelectorAll('.skill-category');
   skillCards.forEach((card, index) => {
     card.style.animationDelay = `${index * 0.1}s`;
   });
 
-  // Обработчик для кнопки скачивания резюме
+  // Resume download handler
   const downloadBtn = document.querySelector('a[download]');
   if (downloadBtn) {
     downloadBtn.addEventListener('click', function(e) {
-      console.log('Скачивание резюме...');
-      // Здесь можно добавить аналитику
+      console.log('Downloading resume...');
     });
   }
 
-  // Динамическое обновление года в футере
+  // Dynamic year update
   const copyrightElement = document.querySelector('.footer-copyright');
   if (copyrightElement) {
     const currentYear = new Date().getFullYear();
-    copyrightElement.textContent = `© ${currentYear} Эльвира Медведева`;
+    copyrightElement.textContent = `© ${currentYear} Elvira Medvedeva`;
   }
 
-  // Трекинг кликов по соцсетям
+  // Social links tracking
   const socialLinks = document.querySelectorAll('a[href*="linkedin"], a[href*="github"]');
   socialLinks.forEach(link => {
     link.addEventListener('click', function(e) {
-      console.log(`Переход на: ${this.href}`);
+      console.log(`Redirecting to: ${this.href}`);
     });
   });
 
-  // Интерактивность для инструментов
+  // Tools interactivity
   const toolItems = document.querySelectorAll('.skill-list li[data-tool]');
   toolItems.forEach(item => {
     item.addEventListener('click', function() {
       const tool = this.getAttribute('data-tool');
       const company = this.getAttribute('data-company');
-      console.log(`Инструмент: ${tool}, Компания: ${company}`);
+      console.log(`Tool: ${tool}, Company: ${company}`);
     });
   });
 
-  // Интерактивность для платформ тестирования
+  // Testing platforms interactivity
   const platformItems = document.querySelectorAll('.platform-item');
   platformItems.forEach(item => {
     item.addEventListener('click', function() {
       const platform = this.querySelector('.platform-name').textContent;
-      console.log(`Платформа тестирования: ${platform}`);
+      console.log(`Testing platform: ${platform}`);
     });
   });
 });
 
-// Современная альтернатива для аналитики при уходе со страницы
+// Language change function
+function changeLanguage(lang) {
+  if (lang === 'ru') {
+    window.location.href = 'index_ru.html';
+  } else {
+    window.location.href = 'index.html';
+  }
+}
+
+// Page visibility change for analytics
 document.addEventListener('visibilitychange', function() {
   if (document.visibilityState === 'hidden') {
-    console.log('Пользователь уходит со страницы');
+    console.log('User leaving the page');
   }
 });
 
-// Утилиты
+// Utilities
 function copyToClipboard(text) {
   navigator.clipboard.writeText(text).then(function() {
-    console.log('Текст скопирован: ' + text);
+    console.log('Text copied: ' + text);
   }).catch(function(err) {
-    console.error('Ошибка копирования: ', err);
+    console.error('Copy error: ', err);
   });
 }
