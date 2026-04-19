@@ -22,10 +22,10 @@ body{font-family:'Segoe UI',system-ui,sans-serif;line-height:1.6;color:var(--tex
 .content-section{background:var(--bg-white);margin:2rem 0;padding:3rem;border-radius:20px;box-shadow:var(--shadow)}
 .section-title{color:var(--primary-color);font-size:2rem;margin-bottom:2rem;position:relative}
 .section-title::after{content:'';position:absolute;bottom:-10px;left:0;width:60px;height:4px;background:var(--accent-color);border-radius:2px}
-.highlights{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1.2rem;margin-top:2rem}
-.highlight-item{background:var(--bg-light);border-radius:16px;padding:1.2rem 1rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:0.5rem;font-weight:500;border:1px solid var(--border-color);box-shadow:var(--shadow);transition:transform 0.2s}
+.highlights{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-top:2rem}
+.highlight-item{background:var(--bg-light);border-radius:16px;padding:1rem 0.8rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:0.5rem;font-weight:500;border:1px solid var(--border-color);box-shadow:var(--shadow);transition:transform 0.2s}
 .highlight-item:hover{transform:translateY(-4px)}
-.highlight-item span:first-child{font-size:2rem}
+.highlight-item span:first-child{font-size:1.5rem}
 .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
 .skill-category{background:var(--bg-light);padding:1.5rem;border-radius:15px;border-left:4px solid var(--primary-color)}
 .skill-list{list-style:none;margin-top:1rem}
@@ -33,21 +33,23 @@ body{font-family:'Segoe UI',system-ui,sans-serif;line-height:1.6;color:var(--tex
 .skill-list li::before{content:'✓';position:absolute;left:0;color:var(--accent-color);font-weight:bold}
 .skill-list li:last-child{border-bottom:none}
 .skill-list li[data-tool]{cursor:help}
-.skill-list li[data-tool]:hover::after{content:attr(data-company);position:absolute;left:100%;top:50%;transform:translateY(-50%);background:var(--accent-color);color:white;padding:0.2rem 0.6rem;border-radius:20px;font-size:0.7rem;white-space:nowrap;margin-left:8px;box-shadow:var(--shadow);z-index:10}
+.skill-list li[data-tool]:hover::after{content:attr(data-company);position:absolute;left:100%;top:50%;transform:translateY(-50%);background:linear-gradient(135deg,var(--accent-color),#d97706);color:white;padding:0.3rem 0.8rem;border-radius:20px;font-size:0.75rem;font-weight:600;white-space:nowrap;margin-left:10px;box-shadow:var(--shadow);z-index:10;pointer-events:none}
 .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:2rem}
 .project-card,.experience-item,.education-item{background:var(--bg-light);padding:2rem;border-radius:15px;border:2px solid transparent;transition:all 0.3s}
 .project-card:hover,.experience-item:hover,.education-item:hover{border-color:var(--primary-color);transform:translateY(-5px)}
 .project-card ul{padding-left:1.5rem;margin-top:1rem}
 .project-card li{margin-bottom:0.5rem;list-style-type:'✓   '}
 .experience-header,.education-header{display:flex;justify-content:space-between;margin-bottom:0.5rem}
-.experience-company{font-size:1.1rem;font-weight:600;margin-bottom:1rem}
+.experience-company{font-size:1.1rem;font-weight:600;margin-bottom:1rem;display:flex;align-items:center;gap:0.3rem}
+.company-icon{margin-right:0.4rem;font-size:1.1rem}
 .experience-list{list-style:none}
 .experience-list li{padding:0.5rem 0 0.5rem 1.8rem;position:relative}
 .experience-list li::before{content:'▹';position:absolute;left:0;color:var(--accent-color)}
 .self-edu-list{list-style:none;margin-top:1rem}
 .self-edu-list li{padding:0.3rem 0 0.3rem 1.8rem;position:relative}
 .self-edu-list li::before{content:'✓';position:absolute;left:0;color:var(--accent-color)}
-.certificate-btn{display:inline-flex;align-items:center;gap:0.5rem;background:linear-gradient(135deg,#f59e0b,#d97706);color:white;padding:0.5rem 1.2rem;border-radius:30px;text-decoration:none;font-weight:600;margin-top:1rem}
+.certificate-btn{display:inline-flex;align-items:center;gap:0.5rem;background:linear-gradient(135deg,#f59e0b,#d97706);color:white;padding:0.5rem 1.2rem;border-radius:30px;text-decoration:none;font-weight:600;margin-top:1rem;transition:all 0.3s}
+.certificate-btn:hover{transform:translateY(-2px);box-shadow:0 8px 15px rgba(245,158,11,0.3)}
 .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1.5rem}
 .contact-card{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.5rem 1rem;border-radius:15px;color:white;text-decoration:none;min-height:140px;text-align:center}
 .email-card{background:linear-gradient(135deg,#ea4335,#d14836)}
@@ -71,6 +73,8 @@ body{font-family:'Segoe UI',system-ui,sans-serif;line-height:1.6;color:var(--tex
 .lang-btn.active{background:var(--primary-color);color:white}
 .theme-toggle{position:fixed;top:1rem;right:1rem;z-index:1000}
 .menu-toggle{display:none}
+.contact-detail{word-break:break-word;text-align:center;line-height:1.3;font-size:0.85rem;font-weight:500}
+.email-card .contact-detail{word-break:break-all;font-size:0.75rem}
 @media (max-width:768px){
   .container{padding:0 1rem}
   .main-title{font-size:2.2rem}
@@ -78,6 +82,9 @@ body{font-family:'Segoe UI',system-ui,sans-serif;line-height:1.6;color:var(--tex
   .menu-toggle span{width:20px;height:2px;background:white}
   .main-nav{display:none;flex-direction:column;position:absolute;top:70px;left:0;right:0;background:var(--primary-dark);padding:1rem;border-radius:0 0 20px 20px;z-index:999}
   .main-nav.active{display:flex}
+}
+@media (max-width:480px){
+  .email-card .contact-detail{font-size:0.7rem}
 }
 .dark-theme{
   --text-dark:#f8fafc;--text-light:#cbd5e1;--bg-light:#1e293b;--bg-white:#0f172a;
@@ -90,7 +97,5 @@ body{font-family:'Segoe UI',system-ui,sans-serif;line-height:1.6;color:var(--tex
 .dark-theme .language-switcher{background:rgba(15,23,42,0.9)}
 .dark-theme .lang-btn{color:var(--text-light)}
 .dark-theme .lang-btn.active{color:white}
-
-/* Анимации */
 .content-section,.project-card,.skill-category,.education-item,.experience-item,.highlight-item{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
 .content-section.visible,.project-card.visible,.skill-category.visible,.education-item.visible,.experience-item.visible,.highlight-item.visible{opacity:1;transform:translateY(0)}
