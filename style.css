@@ -1336,7 +1336,9 @@ main {
   }
 }
 
-/* ===== МОБИЛЬНОЕ МЕНЮ (ГАМБУРГЕР) ===== */
+/* ===== ИСПРАВЛЕННОЕ МОБИЛЬНОЕ МЕНЮ ===== */
+
+/* По умолчанию гамбургер скрыт */
 .menu-toggle {
   display: none;
   background: transparent;
@@ -1345,9 +1347,9 @@ main {
   width: 44px;
   height: 44px;
   cursor: pointer;
-  z-index: 1001;
+  z-index: 1002;
   position: relative;
-  margin-left: auto;
+  flex-shrink: 0;
 }
 
 .menu-toggle span {
@@ -1359,12 +1361,39 @@ main {
   transition: all 0.3s ease;
 }
 
+/* Мобильные стили */
 @media (max-width: 768px) {
+  /* Контейнер для правых контролов (тема + гамбургер) */
+  .mobile-header-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: fixed;
+    top: 0.75rem;
+    right: 0.75rem;
+    z-index: 1003;
+  }
+
+  /* Переключатель темы - сбрасываем фиксированное позиционирование */
+  .theme-toggle {
+    position: static;
+    margin: 0;
+  }
+
+  /* Переключатель языка - чтобы не перекрывал */
+  .language-switcher {
+    position: fixed;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 1003;
+  }
+
+  /* Навигация изначально скрыта */
   .main-nav {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 100%;
+    top: 70px; /* ниже шапки */
     left: 0;
     right: 0;
     background: var(--primary-dark);
@@ -1372,47 +1401,50 @@ main {
     border-radius: 0 0 20px 20px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
     z-index: 999;
+    margin: 0 1rem;
   }
-  
+
   .main-nav.active {
     display: flex;
   }
-  
+
   .menu-toggle {
     display: block;
   }
-  
+
+  /* Анимация гамбургера */
   .menu-toggle.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
   }
-  
   .menu-toggle.active span:nth-child(2) {
     opacity: 0;
   }
-  
   .menu-toggle.active span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
   }
-  
-  /* Контейнер для кнопки меню и переключателя темы */
-  .mobile-header-controls {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    position: fixed;
-    top: 0.5rem;
-    right: 0.5rem;
-    z-index: 1002;
+
+  /* Корректировка отступа контента, чтобы не перекрывало */
+  .main-header .container {
+    padding-top: 1rem;
   }
-  
-  /* Сдвигаем кнопку темы, чтобы не мешала */
-  .theme-toggle {
-    position: static;
-    margin-left: 0;
+
+  /* Чтобы кнопки фиксированные не мешали кликам */
+  .main-header {
+    position: relative;
   }
-  
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
   .language-switcher {
-    left: 0.5rem;
-    right: auto;
+    padding: 0.3rem;
+  }
+  .lang-btn {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+  }
+  .main-nav {
+    margin: 0 0.5rem;
+    top: 65px;
   }
 }

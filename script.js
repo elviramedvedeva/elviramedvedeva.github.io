@@ -135,17 +135,28 @@ document.addEventListener('DOMContentLoaded', function() {
 // Mobile menu toggle
 const menuToggle = document.getElementById('menuToggle');
 const mainNav = document.querySelector('.main-nav');
-if (menuToggle) {
-  menuToggle.addEventListener('click', function() {
+
+if (menuToggle && mainNav) {
+  menuToggle.addEventListener('click', function(e) {
+    e.stopPropagation();
     this.classList.toggle('active');
     mainNav.classList.toggle('active');
   });
-  
+
   // Закрывать меню при клике на ссылку
-  document.querySelectorAll('.nav-link').forEach(link => {
+  const navLinks = mainNav.querySelectorAll('.nav-link');
+  navLinks.forEach(link => {
     link.addEventListener('click', () => {
       menuToggle.classList.remove('active');
       mainNav.classList.remove('active');
     });
+  });
+
+  // Закрывать меню при клике вне его
+  document.addEventListener('click', function(event) {
+    if (!mainNav.contains(event.target) && !menuToggle.contains(event.target)) {
+      menuToggle.classList.remove('active');
+      mainNav.classList.remove('active');
+    }
   });
 }
