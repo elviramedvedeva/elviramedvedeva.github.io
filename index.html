@@ -10,6 +10,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://elviramedvedeva.github.io/">
   <link rel="canonical" href="https://elviramedvedeva.github.io/">
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='15' fill='%232563eb'/%3E%3Ctext x='50' y='68' font-family='Arial, sans-serif' font-size='36' font-weight='bold' text-anchor='middle' fill='white'%3EQA%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
@@ -49,7 +50,7 @@
   <main class="container">
     <section id="about" class="content-section">
       <h2 class="section-title">About Me</h2>
-      <p>Detail-oriented QA Engineer with hands-on experience in backend, mobile, and web testing. Currently an intern at IDT Company, executing 400+ mobile test cases and authoring 200+ test cases. Completed formal training in STLC, test design, and defect management. Seeking a Junior QA role to apply analytical skills and a quality-focused mindset.</p>
+      <p>Detail-oriented QA Engineer with hands-on experience in backend, mobile, and web testing. Currently an intern at IDT Company, executing 300+ test cases documented in Allure and developing 35+ automated tests for Postman collections. Completed formal training in STLC, test design, and defect management. Seeking a Junior QA role to apply analytical skills and a quality-focused mindset.</p>
       <div class="highlights">
         <div class="highlight-item"><span>🎯</span> Goal-oriented</div>
         <div class="highlight-item"><span>🔍</span> Attention to detail</div>
@@ -65,11 +66,15 @@
           <h3>Manual QA Intern</h3>
           <span class="experience-date">Feb 2026 - Present</span>
         </div>
-        <div class="experience-company">IDT Company</div>
+        <div class="experience-company"><span class="company-icon">🏢</span> IDT Company</div>
         <ul class="experience-list">
-          <li>Perform backend testing including REST API validation (Postman) and database verification with complex SQL queries.</li>
-          <li>Conduct mobile testing on iOS and Android using Android Studio and Charles; executed a mobile testing run covering 400+ test cases.</li>
-          <li>Authored 200+ test cases documented in Allure, ensuring comprehensive coverage and traceability.</li>
+          <li>Perform backend testing including REST API validation (Postman, Swagger) and database verification with complex SQL queries.</li>
+          <li>Conduct mobile testing on iOS and Android using Android Studio and Charles for network monitoring.</li>
+          <li>Authored 300+ test cases documented in Allure, ensuring comprehensive coverage and traceability.</li>
+          <li>Developed and maintained 35+ automated tests for Postman collections to streamline API regression testing.</li>
+          <li>Utilize monitoring and logging tools: Grafana, Kafka, Splunk to analyze system behavior and identify bottlenecks.</li>
+          <li>Collaborate with development team via Jira and Confluence; manage test documentation in TestRail.</li>
+          <li>Work with internal Admin UI to configure test environments and verify backend changes.</li>
         </ul>
       </div>
     </section>
@@ -77,10 +82,43 @@
     <section id="skills" class="content-section">
       <h2 class="section-title">Skills & Technologies</h2>
       <div class="skills-grid">
-        <div class="skill-category"><h3>🛠️ Tools</h3><ul class="skill-list"><li>Jira</li><li>Confluence</li><li>TestRail</li><li>Allure</li><li>Postman</li><li>Charles Proxy</li><li>Android Studio</li><li>Chrome DevTools</li><li>Git/GitHub</li><li>Splunk</li><li>Grafana</li><li>VS Code</li></ul></div>
-        <div class="skill-category"><h3>🧪 QA & Testing</h3><ul class="skill-list"><li>Functional Testing</li><li>Regression Testing</li><li>Smoke/Sanity Testing</li><li>UI/UX Testing</li><li>Mobile Testing (iOS/Android)</li><li>Backend/API Testing</li><li>Test Cases & Checklists</li><li>Bug Reporting (Jira)</li></ul></div>
-        <div class="skill-category"><h3>💻 Technical</h3><ul class="skill-list"><li>HTML/CSS Basics</li><li>SQL (SELECT, JOIN, WHERE)</li><li>REST API Testing (Postman)</li><li>Python (Fundamentals)</li><li>Technical Documentation</li><li>Network Analysis (Charles)</li><li>Monitoring (Grafana, Splunk)</li></ul></div>
-        <div class="skill-category"><h3>🌐 Languages</h3><ul class="skill-list"><li>Russian - Native</li><li>English - B2 (Professional Working)</li><li>Polish - C1</li></ul></div>
+        <div class="skill-category"><h3>🛠️ Tools</h3>
+          <ul class="skill-list">
+            <li data-tool="Jira" data-company="Atlassian">Jira</li>
+            <li data-tool="Confluence" data-company="Atlassian">Confluence</li>
+            <li data-tool="TestRail" data-company="Gurock">TestRail</li>
+            <li data-tool="Allure" data-company="Qameta">Allure</li>
+            <li data-tool="Postman" data-company="Postman Inc">Postman</li>
+            <li data-tool="Swagger" data-company="SmartBear">Swagger</li>
+            <li data-tool="Charles Proxy" data-company="Charles Proxy">Charles</li>
+            <li data-tool="Android Studio" data-company="Google">Android Studio</li>
+            <li data-tool="Chrome DevTools" data-company="Google">DevTools</li>
+            <li data-tool="Git/GitHub" data-company="Microsoft">Git, GitHub</li>
+            <li data-tool="Grafana" data-company="Grafana Labs">Grafana</li>
+            <li data-tool="Kafka" data-company="Apache">Kafka</li>
+            <li data-tool="Splunk" data-company="Splunk">Splunk</li>
+            <li data-tool="Admin UI" data-company="Internal">Admin UI</li>
+            <li data-tool="VS Code" data-company="Microsoft">VS Code</li>
+          </ul>
+        </div>
+        <div class="skill-category"><h3>🧪 QA & Testing</h3>
+          <ul class="skill-list">
+            <li>Functional Testing</li><li>Regression Testing</li><li>Smoke/Sanity Testing</li>
+            <li>UI/UX Testing</li><li>Mobile Testing (iOS/Android)</li><li>Backend/API Testing</li>
+            <li>Test Cases & Checklists</li><li>Bug Reporting (Jira)</li>
+          </ul>
+        </div>
+        <div class="skill-category"><h3>💻 Technical</h3>
+          <ul class="skill-list">
+            <li>HTML/CSS Basics</li><li>SQL (SELECT, JOIN, WHERE)</li><li>REST API Testing</li>
+            <li>Python (Fundamentals)</li><li>Technical Documentation</li><li>Network Analysis</li>
+          </ul>
+        </div>
+        <div class="skill-category"><h3>🌐 Languages</h3>
+          <ul class="skill-list">
+            <li>Russian - Native</li><li>English - B2 (Professional Working)</li><li>Polish - C1</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -95,7 +133,7 @@
         <div class="project-card">
           <h3>Mobile Testing Practice</h3>
           <p>Tested mobile apps on iOS and Android as part of internship.</p>
-          <ul><li>Executed 400+ test cases</li><li>Monitored traffic with Charles Proxy</li><li>Documented results in Allure</li></ul>
+          <ul><li>Executed 300+ test cases</li><li>Monitored traffic with Charles Proxy</li><li>Documented results in Allure</li></ul>
         </div>
       </div>
     </section>
@@ -110,7 +148,14 @@
       </div>
       <div class="education-item">
         <div class="experience-header"><h3>Self-Education</h3><span class="experience-date">2025 - Present</span></div>
-        <p>Continuous learning via Artem Rusov channel, Stepik QA course, Python basics, technical docs, and QA communities.</p>
+        <p>Continuous learning via:</p>
+        <ul class="self-edu-list">
+          <li>Artem Rusov channel - practical testing skills</li>
+          <li>"Software Testing" course on Stepik - in-depth theory</li>
+          <li>Python learning - basics for test automation</li>
+          <li>Technical documentation reading and analysis</li>
+          <li>QA communities participation</li>
+        </ul>
       </div>
     </section>
 

@@ -10,6 +10,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://elviramedvedeva.github.io/index_ru.html">
   <link rel="canonical" href="https://elviramedvedeva.github.io/index_ru.html">
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='15' fill='%232563eb'/%3E%3Ctext x='50' y='68' font-family='Arial, sans-serif' font-size='36' font-weight='bold' text-anchor='middle' fill='white'%3EQA%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
@@ -45,7 +46,7 @@
   <main class="container">
     <section id="about" class="content-section">
       <h2 class="section-title">О себе</h2>
-      <p>Внимательный к деталям QA-инженер с практическим опытом тестирования бэкенда, мобильных и веб-приложений. В настоящее время стажёр в компании IDT, выполнила 400+ мобильных тест-кейсов и написала 200+ тест-кейсов. Прошла обучение по STLC, тест-дизайну и управлению дефектами. Ищу позицию Junior QA для применения аналитических навыков и обеспечения качества продукта.</p>
+      <p>Внимательный к деталям QA-инженер с практическим опытом тестирования бэкенда, мобильных и веб-приложений. В настоящее время стажёр в компании IDT: написала 300+ тест-кейсов в Allure, разработала 35+ автотестов для коллекций Postman. Прошла обучение по STLC, тест-дизайну и управлению дефектами. Ищу позицию Junior QA для применения аналитических навыков и обеспечения качества продукта.</p>
       <div class="highlights">
         <div class="highlight-item"><span>🎯</span> Ориентация на результат</div>
         <div class="highlight-item"><span>🔍</span> Внимание к деталям</div>
@@ -58,11 +59,15 @@
       <h2 class="section-title">Опыт работы</h2>
       <div class="experience-item">
         <div class="experience-header"><h3>Стажёр по ручному тестированию</h3><span class="experience-date">Фев 2026 - наст. время</span></div>
-        <div class="experience-company">IDT Company</div>
+        <div class="experience-company"><span class="company-icon">🏢</span> IDT Company</div>
         <ul class="experience-list">
-          <li>Тестирование бэкенда: валидация REST API (Postman) и проверка баз данных сложными SQL-запросами.</li>
-          <li>Мобильное тестирование на iOS и Android с использованием Android Studio и Charles; выполнила прогон из 400+ тест-кейсов.</li>
-          <li>Написала 200+ тест-кейсов с документированием в Allure, обеспечивая полное покрытие и прослеживаемость.</li>
+          <li>Тестирование бэкенда: валидация REST API (Postman, Swagger) и проверка баз данных сложными SQL-запросами.</li>
+          <li>Мобильное тестирование на iOS и Android с использованием Android Studio и Charles для мониторинга трафика.</li>
+          <li>Написано 300+ тест-кейсов с документированием в Allure, обеспечено полное покрытие.</li>
+          <li>Разработано и поддерживается 35+ автотестов для коллекций Postman (регресс API).</li>
+          <li>Использую инструменты мониторинга и логирования: Grafana, Kafka, Splunk для анализа поведения системы.</li>
+          <li>Работаю с командой через Jira и Confluence; веду тестовую документацию в TestRail.</li>
+          <li>Использую внутренний Admin UI для настройки тестовых окружений и проверки изменений на бэкенде.</li>
         </ul>
       </div>
     </section>
@@ -70,10 +75,43 @@
     <section id="skills" class="content-section">
       <h2 class="section-title">Навыки и технологии</h2>
       <div class="skills-grid">
-        <div class="skill-category"><h3>🛠️ Инструменты</h3><ul class="skill-list"><li>Jira</li><li>Confluence</li><li>TestRail</li><li>Allure</li><li>Postman</li><li>Charles Proxy</li><li>Android Studio</li><li>Chrome DevTools</li><li>Git/GitHub</li><li>Splunk</li><li>Grafana</li><li>VS Code</li></ul></div>
-        <div class="skill-category"><h3>🧪 Тестирование</h3><ul class="skill-list"><li>Функциональное тестирование</li><li>Регрессионное тестирование</li><li>Smoke / Sanity</li><li>UI/UX тестирование</li><li>Мобильное тестирование (iOS/Android)</li><li>Тестирование API / бэкенда</li><li>Составление тест-кейсов и чек-листов</li><li>Баг-репорты (Jira)</li></ul></div>
-        <div class="skill-category"><h3>💻 Технические</h3><ul class="skill-list"><li>Основы HTML/CSS</li><li>SQL (SELECT, JOIN, WHERE)</li><li>Тестирование REST API (Postman)</li><li>Python (базовый)</li><li>Чтение технической документации</li><li>Анализ сетевого трафика (Charles)</li><li>Мониторинг (Grafana, Splunk)</li></ul></div>
-        <div class="skill-category"><h3>🌐 Языки</h3><ul class="skill-list"><li>Русский - родной</li><li>Английский - B2</li><li>Польский - C1</li></ul></div>
+        <div class="skill-category"><h3>🛠️ Инструменты</h3>
+          <ul class="skill-list">
+            <li data-tool="Jira" data-company="Atlassian">Jira</li>
+            <li data-tool="Confluence" data-company="Atlassian">Confluence</li>
+            <li data-tool="TestRail" data-company="Gurock">TestRail</li>
+            <li data-tool="Allure" data-company="Qameta">Allure</li>
+            <li data-tool="Postman" data-company="Postman Inc">Postman</li>
+            <li data-tool="Swagger" data-company="SmartBear">Swagger</li>
+            <li data-tool="Charles Proxy" data-company="Charles Proxy">Charles</li>
+            <li data-tool="Android Studio" data-company="Google">Android Studio</li>
+            <li data-tool="Chrome DevTools" data-company="Google">DevTools</li>
+            <li data-tool="Git/GitHub" data-company="Microsoft">Git, GitHub</li>
+            <li data-tool="Grafana" data-company="Grafana Labs">Grafana</li>
+            <li data-tool="Kafka" data-company="Apache">Kafka</li>
+            <li data-tool="Splunk" data-company="Splunk">Splunk</li>
+            <li data-tool="Admin UI" data-company="Внутренний">Admin UI</li>
+            <li data-tool="VS Code" data-company="Microsoft">VS Code</li>
+          </ul>
+        </div>
+        <div class="skill-category"><h3>🧪 Тестирование</h3>
+          <ul class="skill-list">
+            <li>Функциональное тестирование</li><li>Регрессионное</li><li>Smoke / Sanity</li>
+            <li>UI/UX тестирование</li><li>Мобильное (iOS/Android)</li><li>API / бэкенд</li>
+            <li>Тест-кейсы и чек-листы</li><li>Баг-репорты (Jira)</li>
+          </ul>
+        </div>
+        <div class="skill-category"><h3>💻 Технические</h3>
+          <ul class="skill-list">
+            <li>Основы HTML/CSS</li><li>SQL (SELECT, JOIN, WHERE)</li><li>Тестирование REST API</li>
+            <li>Python (базовый)</li><li>Техническая документация</li><li>Анализ сетевого трафика</li>
+          </ul>
+        </div>
+        <div class="skill-category"><h3>🌐 Языки</h3>
+          <ul class="skill-list">
+            <li>Русский - родной</li><li>Английский - B2</li><li>Польский - C1</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -88,7 +126,7 @@
         <div class="project-card">
           <h3>Практика мобильного тестирования</h3>
           <p>Тестирование мобильных приложений на iOS и Android в рамках стажировки.</p>
-          <ul><li>Выполнено 400+ тест-кейсов</li><li>Мониторинг трафика с Charles Proxy</li><li>Документирование в Allure</li></ul>
+          <ul><li>Выполнено 300+ тест-кейсов</li><li>Мониторинг трафика с Charles Proxy</li><li>Документирование в Allure</li></ul>
         </div>
       </div>
     </section>
@@ -102,8 +140,15 @@
         <a href="Elvira_Miadzvedzeva_IT-Academy_Software_Testing.pdf" class="certificate-btn" target="_blank">📜 Посмотреть сертификат (PDF)</a>
       </div>
       <div class="education-item">
-        <div class="experience-header"><h3>Самообразование</h3><span class="experience-date">2025 - настоящее время</span></div>
-        <p>Постоянное развитие через канал Артёма Русова, курс на Stepik, изучение Python, чтение технической документации и участие в QA-сообществах.</p>
+        <div class="experience-header"><h3>Самообразование</h3><span class="experience-date">2025 - наст. время</span></div>
+        <p>Постоянное развитие:</p>
+        <ul class="self-edu-list">
+          <li>Канал Артёма Русова - практические навыки</li>
+          <li>Курс "Тестирование ПО" на Stepik - теория</li>
+          <li>Изучение Python - основы автоматизации</li>
+          <li>Чтение технической документации</li>
+          <li>Участие в QA-сообществах</li>
+        </ul>
       </div>
     </section>
 
