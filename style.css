@@ -146,35 +146,42 @@ body {
   border-radius: 2px;
 }
 
-/* ===== HIGHLIGHTS (таблетки) ===== */
-.highlights {
+/* ===== HIGHLIGHTS (карточки качеств) ===== */
+.highlights-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1rem;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
-.highlight-item {
+.highlight-card {
   background: var(--bg-light);
-  border-radius: 16px;
-  padding: 1rem 0.8rem;
+  padding: 1.2rem 1rem;
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
   font-weight: 500;
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow);
-  transition: transform 0.2s;
+  transition: all 0.3s ease;
 }
 
-.highlight-item:hover {
-  transform: translateY(-4px);
+.highlight-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.15);
+  border-color: var(--primary-color);
 }
 
-.highlight-item span:first-child {
-  font-size: 1.5rem;
+.highlight-icon {
+  font-size: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.highlight-card:hover .highlight-icon {
+  transform: scale(1.2) rotate(5deg);
 }
 
 /* ===== SKILLS ===== */
@@ -239,7 +246,6 @@ body {
   line-height: 1.3;
 }
 
-/* На мобильных тултип снизу */
 @media (max-width: 768px) {
   .skill-list li[data-tool]:hover::after {
     left: 0;
@@ -251,6 +257,33 @@ body {
   }
 }
 
+/* Интерактивные теги навыков (для будущего использования) */
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.skill-tag {
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.3s;
+  cursor: default;
+}
+
+.skill-tag:hover {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
 /* ===== PROJECTS / EXPERIENCE / EDUCATION ===== */
 .projects-grid {
   display: grid;
@@ -258,7 +291,55 @@ body {
   gap: 2rem;
 }
 
-.project-card,
+.project-card {
+  background: var(--bg-white);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-color);
+}
+
+.project-header {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: white;
+  padding: 1.2rem 1.5rem;
+}
+
+.project-header h3 {
+  margin: 0;
+  color: white;
+  font-size: 1.1rem;
+}
+
+.project-body {
+  padding: 1.5rem;
+}
+
+.project-features {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.project-features li {
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  position: relative;
+  font-size: 0.95rem;
+}
+
+.project-features li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
 .experience-item,
 .education-item {
   background: var(--bg-light);
@@ -268,21 +349,10 @@ body {
   transition: all 0.3s;
 }
 
-.project-card:hover,
 .experience-item:hover,
 .education-item:hover {
   border-color: var(--primary-color);
   transform: translateY(-5px);
-}
-
-.project-card ul {
-  padding-left: 1.5rem;
-  margin-top: 1rem;
-}
-
-.project-card li {
-  margin-bottom: 0.5rem;
-  list-style-type: '✓   ';
 }
 
 .experience-header,
@@ -391,69 +461,6 @@ body {
 .github-card {
   background: #333;
 }
-.dropdown-card {
-  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-  padding: 0 !important;
-}
-
-.dropdown-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.dropdown-btn {
-  background: transparent;
-  border: none;
-  color: white;
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1.5rem 1rem;
-  width: 100%;
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-10px);
-  transition: all 0.3s;
-  z-index: 100;
-  overflow: hidden;
-}
-
-.dropdown-wrapper:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.dropdown-menu a {
-  display: block;
-  padding: 0.8rem 1rem;
-  color: var(--text-dark);
-  text-decoration: none;
-  border-bottom: 1px solid var(--border-color);
-}
-
-.dropdown-menu a:hover {
-  background: var(--bg-light);
-  color: var(--primary-color);
-}
 
 .contact-detail {
   word-break: break-word;
@@ -472,6 +479,79 @@ body {
   .email-card .contact-detail {
     font-size: 0.7rem;
   }
+}
+
+/* Выпадающее меню CV (снизу вверх) */
+.cv-download-wrapper {
+  position: relative;
+}
+
+.cv-dropdown {
+  background: linear-gradient(135deg, var(--accent-color), #d97706);
+  color: white;
+  padding: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s;
+  border: none;
+  width: 100%;
+}
+
+.cv-dropdown:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+}
+
+.cv-menu {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: var(--bg-white);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 100;
+}
+
+.cv-dropdown-wrapper:hover .cv-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.cv-menu a {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.9rem 1.2rem;
+  color: var(--text-dark);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-color);
+  transition: all 0.2s;
+}
+
+.cv-menu a:last-child {
+  border-bottom: none;
+}
+
+.cv-menu a:hover {
+  background: var(--bg-light);
+  color: var(--primary-color);
+  padding-left: 1.5rem;
+}
+
+.cv-menu .flag {
+  font-size: 1.2rem;
 }
 
 /* ===== FOOTER ===== */
@@ -617,16 +697,16 @@ body {
   border-top: 1px solid #334155;
 }
 
-.dark-theme .dropdown-menu {
+.dark-theme .cv-menu {
   background: var(--bg-white);
   border: 1px solid var(--border-color);
 }
 
-.dark-theme .dropdown-menu a {
+.dark-theme .cv-menu a {
   color: var(--text-light);
 }
 
-.dark-theme .dropdown-menu a:hover {
+.dark-theme .cv-menu a:hover {
   background: var(--bg-light);
   color: var(--primary-color);
 }
@@ -643,13 +723,23 @@ body {
   color: white;
 }
 
+.dark-theme .skill-tag {
+  background: var(--bg-light);
+  color: var(--text-light);
+}
+
+.dark-theme .skill-tag:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
 /* ===== ANIMATIONS ===== */
 .content-section,
 .project-card,
 .skill-category,
 .education-item,
 .experience-item,
-.highlight-item {
+.highlight-card {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
@@ -660,197 +750,7 @@ body {
 .skill-category.visible,
 .education-item.visible,
 .experience-item.visible,
-.highlight-item.visible {
+.highlight-card.visible {
   opacity: 1;
   transform: translateY(0);
-}
-/* Интерактивные теги навыков */
-.skill-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-top: 1rem;
-}
-
-.skill-tag {
-  background: var(--bg-white);
-  border: 1px solid var(--border-color);
-  padding: 0.4rem 0.9rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: default;
-}
-
-.skill-tag:hover {
-  background: var(--primary-color);
-  color: white;
-  border-color: var(--primary-color);
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
-}
-
-.dark-theme .skill-tag {
-  background: var(--bg-light);
-  color: var(--text-light);
-}
-
-.dark-theme .skill-tag:hover {
-  background: var(--primary-color);
-  color: white;
-}
-.project-card {
-  background: var(--bg-white);
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid var(--border-color);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  border-color: var(--primary-color);
-}
-
-.project-header {
-  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-  color: white;
-  padding: 1.2rem 1.5rem;
-}
-
-.project-header h3 {
-  margin: 0;
-  color: white;
-  font-size: 1.1rem;
-}
-
-.project-body {
-  padding: 1.5rem;
-}
-
-.project-features {
-  list-style: none;
-  margin-top: 1rem;
-}
-
-.project-features li {
-  padding: 0.5rem 0 0.5rem 1.5rem;
-  position: relative;
-  font-size: 0.95rem;
-}
-
-.project-features li::before {
-  content: '▹';
-  position: absolute;
-  left: 0;
-  color: var(--accent-color);
-  font-weight: bold;
-}
-.highlights-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
-
-.highlight-card {
-  background: var(--bg-light);
-  padding: 1.2rem 1rem;
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 0.6rem;
-  font-weight: 500;
-  border: 1px solid var(--border-color);
-  transition: all 0.3s ease;
-}
-
-.highlight-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.15);
-  border-color: var(--primary-color);
-}
-
-.highlight-icon {
-  font-size: 2rem;
-  transition: transform 0.3s ease;
-}
-
-.highlight-card:hover .highlight-icon {
-  transform: scale(1.2) rotate(5deg);
-}
-.cv-download-wrapper {
-  position: relative;
-}
-
-.cv-dropdown {
-  background: linear-gradient(135deg, var(--accent-color), #d97706);
-  color: white;
-  padding: 1rem;
-  border-radius: 12px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  font-weight: 600;
-  transition: all 0.3s;
-  border: none;
-  width: 100%;
-}
-
-.cv-dropdown:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
-}
-
-.cv-menu {
-  position: absolute;
-  bottom: calc(100% + 8px);
-  left: 0;
-  right: 0;
-  background: var(--bg-white);
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  overflow: hidden;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 100;
-}
-
-.cv-dropdown-wrapper:hover .cv-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.cv-menu a {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  padding: 0.9rem 1.2rem;
-  color: var(--text-dark);
-  text-decoration: none;
-  border-bottom: 1px solid var(--border-color);
-  transition: all 0.2s;
-}
-
-.cv-menu a:last-child {
-  border-bottom: none;
-}
-
-.cv-menu a:hover {
-  background: var(--bg-light);
-  color: var(--primary-color);
-  padding-left: 1.5rem;
-}
-
-.cv-menu .flag {
-  font-size: 1.2rem;
 }
