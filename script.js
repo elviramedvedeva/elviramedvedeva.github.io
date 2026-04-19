@@ -131,3 +131,21 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+// Mobile menu toggle
+const menuToggle = document.getElementById('menuToggle');
+const mainNav = document.querySelector('.main-nav');
+if (menuToggle) {
+  menuToggle.addEventListener('click', function() {
+    this.classList.toggle('active');
+    mainNav.classList.toggle('active');
+  });
+  
+  // Закрывать меню при клике на ссылку
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      menuToggle.classList.remove('active');
+      mainNav.classList.remove('active');
+    });
+  });
+}

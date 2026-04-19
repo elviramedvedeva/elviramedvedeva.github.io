@@ -1336,3 +1336,83 @@ main {
   }
 }
 
+/* ===== МОБИЛЬНОЕ МЕНЮ (ГАМБУРГЕР) ===== */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 8px;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  z-index: 1001;
+  position: relative;
+  margin-left: auto;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: white;
+  margin: 5px auto;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--primary-dark);
+    padding: 1.5rem;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    z-index: 999;
+  }
+  
+  .main-nav.active {
+    display: flex;
+  }
+  
+  .menu-toggle {
+    display: block;
+  }
+  
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  
+  /* Контейнер для кнопки меню и переключателя темы */
+  .mobile-header-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: fixed;
+    top: 0.5rem;
+    right: 0.5rem;
+    z-index: 1002;
+  }
+  
+  /* Сдвигаем кнопку темы, чтобы не мешала */
+  .theme-toggle {
+    position: static;
+    margin-left: 0;
+  }
+  
+  .language-switcher {
+    left: 0.5rem;
+    right: auto;
+  }
+}
