@@ -99,3 +99,42 @@ body{font-family:'Segoe UI',system-ui,sans-serif;line-height:1.6;color:var(--tex
 .dark-theme .lang-btn.active{color:white}
 .content-section,.project-card,.skill-category,.education-item,.experience-item,.highlight-item{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
 .content-section.visible,.project-card.visible,.skill-category.visible,.education-item.visible,.experience-item.visible,.highlight-item.visible{opacity:1;transform:translateY(0)}
+/* === ИСПРАВЛЕННЫЙ ТУЛТИП ДЛЯ ИНСТРУМЕНТОВ === */
+.skill-list li[data-tool] {
+  position: relative;
+  cursor: help;
+}
+
+.skill-list li[data-tool]:hover::after {
+  content: attr(data-company);
+  position: absolute;
+  left: calc(100% + 8px); /* Чёткий отступ от правого края пункта */
+  top: 50%;
+  transform: translateY(-50%); /* Идеальное центрирование по вертикали */
+  background: linear-gradient(135deg, var(--accent-color), #d97706);
+  color: white;
+  padding: 0.25rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: var(--shadow);
+  z-index: 100;
+  pointer-events: none; /* Не перекрывает клики */
+  opacity: 0;
+  animation: tooltipFade 0.2s ease forwards;
+}
+
+@keyframes tooltipFade {
+  to { opacity: 1; }
+}
+
+/* На мобильных тултип показываем СВЕРХУ, чтобы не вылезал за экран */
+@media (max-width: 768px) {
+  .skill-list li[data-tool]:hover::after {
+    left: 50%;
+    top: auto;
+    bottom: calc(100% + 8px);
+    transform: translateX(-50%);
+  }
+}
