@@ -10,42 +10,34 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Кнопка переключения темы -->
   <button class="theme-toggle" aria-label="Переключить тему" id="themeToggle">
     <span class="theme-icon">🌙</span>
   </button>
-  <!-- Переключатель языка -->
+
   <div class="language-switcher">
     <a href="index.html" class="lang-btn">EN</a>
     <a href="index_ru.html" class="lang-btn active">RU</a>
     <a href="index_pl.html" class="lang-btn">PL</a>
   </div>
 
-  <!-- Хедер с градиентом -->
   <header class="main-header">
     <div class="container">
       <img src="elvira.jpg" alt="Фото Эльвиры Медведевой" class="profile-photo">
       <h1 class="main-title">Эльвира Медведева</h1>
       <p class="subtitle">QA Trainee | QA Junior</p>
       
-      <!-- Блок с целью -->
       <div class="career-goal">
-        <p data-translate="careerGoal">🔎 Ищу стажировку или junior-позицию в QA. Готова к обучению, командной работе и развитию в сфере тестирования.</p>
+        <p>🔎 Ищу стажировку или junior-позицию в QA. Готова к обучению, командной работе и развитию в сфере тестирования.</p>
       </div>
       
       <div class="contact-info">
-        <div class="contact-item">
-          <span class="icon">📍</span>
-          <span>Гродно/Минск, Беларусь</span>
-        </div>
-        <div class="contact-item">
-          <span class="icon">📧</span>
-          <a href="mailto:elvira.medvedeva.work@gmail.com">elvira.medvedeva.work@gmail.com</a>
-        </div>
+        <div class="contact-item"><span class="icon">📍</span><span>Гродно/Минск, Беларусь (готова к релокации в ЕС)</span></div>
+        <div class="contact-item"><span class="icon">📧</span><a href="mailto:elvira.medvedeva.work@gmail.com">elvira.medvedeva.work@gmail.com</a></div>
       </div>
 
       <nav class="main-nav">
         <a href="#about" class="nav-link">О себе</a>
+        <a href="#experience" class="nav-link">Опыт</a>
         <a href="#skills" class="nav-link">Навыки</a>
         <a href="#projects" class="nav-link">Проекты</a>
         <a href="#education" class="nav-link">Образование</a>
@@ -55,213 +47,190 @@
   </header>
 
   <main class="container">
-    <!-- Секция "О себе" -->
     <section id="about" class="content-section fade-in">
-      <h2 class="section-title" data-translate="aboutTitle">О себе</h2>
-      <p>Начинающий специалист в области тестирования программного обеспечения. Имею сильную мотивацию к развитию в QA, готова обучаться новым технологиям и методологиям. Обладаю аналитическим складом ума, внимательностью к деталям и усидчивостью.</p>
-      
+      <h2 class="section-title">О себе</h2>
+      <p>Внимательный к деталям QA-инженер с практическим опытом тестирования бэкенда, мобильных и веб-приложений. В настоящее время стажёр в компании IDT, выполнила 400+ мобильных тест-кейсов и написала 200+ тест-кейсов в Allure. Прошла обучение по STLC, тест-дизайну и управлению дефектами. Ищу позицию Junior QA для применения аналитических навыков и обеспечения качества продукта.</p>
       <div class="highlights">
-        <div class="highlight-item">
-          <span class="highlight-icon">🎯</span>
-          <span>Целеустремленность</span>
-        </div>
-        <div class="highlight-item">
-          <span class="highlight-icon">🔍</span>
-          <span>Внимание к деталям</span>
-        </div>
-        <div class="highlight-item">
-          <span class="highlight-icon">📚</span>
-          <span>Готовность к обучению</span>
-        </div>
-        <div class="highlight-item">
-          <span class="highlight-icon">🤝</span>
-          <span>Командная работа</span>
-        </div>
+        <div class="highlight-item"><span class="highlight-icon">🎯</span><span>Целеустремленность</span></div>
+        <div class="highlight-item"><span class="highlight-icon">🔍</span><span>Внимание к деталям</span></div>
+        <div class="highlight-item"><span class="highlight-icon">📚</span><span>Быстрая обучаемость</span></div>
+        <div class="highlight-item"><span class="highlight-icon">🤝</span><span>Командная работа</span></div>
       </div>
     </section>
 
-  <!-- Секция "Навыки" -->
-<section id="skills" class="content-section fade-in">
-  <h2 class="section-title">Навыки</h2>
-  <div class="skills-grid">
-    
-  <!-- Инструменты -->
-    <div class="skill-category">
-      <h3>🛠️ Инструменты</h3>
-      <ul class="skill-list">
-        <li data-tool="Jira" data-company="Atlassian">Jira</li>
-        <li data-tool="Trello" data-company="Atlassian">Trello</li>
-        <li data-tool="Chrome DevTools" data-company="Google">Chrome DevTools</li>
-        <li data-tool="Postman" data-company="Postman Inc">Postman</li>
-        <li data-tool="GitHub" data-company="Microsoft">Git, GitHub</li>
-        <li data-tool="TestRail" data-company="Gurock">TestRail</li>
-        <li data-tool="Visual Studio Code" data-company="Microsoft">VS Code</li>
-        <li data-tool="Catalon Studio" data-company="Catalon">Catalon Studio</li>
-      </ul>
-    </div> 
-    <!-- Технические навыки -->
-    <div class="skill-category">
-      <h3>💻 Технические навыки</h3>
-      <ul class="skill-list">
-        <li>Основы HTML/CSS</li>
-        <li>Основы SQL</li>
-        <li>Основы API тестирования</li>
-        <li>Python (базовый уровень)</li>
-        <li>Чтение технической документации</li>
-      </ul>
-    </div>
-    
-    <!-- Тестирование -->
-    <div class="skill-category">
-      <h3>🧪 Тестирование</h3>
-      <ul class="skill-list">
-        <li>Функциональное тестирование</li>
-        <li>Регрессионное тестирование</li>
-        <li>Тестирование UI/UX</li>
-        <li>Составление тест-кейсов</li>
-        <li>Багрепорты</li>
-      </ul>
-    </div>
-    
-    
-    
-    
+    <section id="experience" class="content-section fade-in">
+      <h2 class="section-title">Опыт работы</h2>
+      <div class="experience-item">
+        <div class="experience-header">
+          <h3>Стажёр по ручному тестированию</h3>
+          <span class="experience-date">Фев 2026 - настоящее время</span>
+        </div>
+        <div class="experience-company">IDT Company</div>
+        <ul class="experience-list">
+          <li>Тестирование бэкенда: валидация REST API (Postman) и проверка баз данных сложными SQL-запросами.</li>
+          <li>Мобильное тестирование на iOS и Android с использованием Android Studio и Charles для мониторинга трафика; выполнила прогон из 400+ тест-кейсов.</li>
+          <li>Написала 200+ тест-кейсов с документированием в Allure, обеспечивая полное покрытие и прослеживаемость.</li>
+        </ul>
+      </div>
+    </section>
 
-    <!-- Языки -->
-    <div class="skill-category">
-      <h3>🌐 Языки</h3>
-      <ul class="skill-list">
-        <li>Русский — родной</li>
-        <li>Английский — B2</li>
-        <li>Польский — С1</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-    <!-- Секция "Проекты" -->
-    <section id="projects" class="content-section fade-in">
-      <h2 class="section-title">Проекты</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <h3>Учебные проекты</h3>
-          <p>Практика тестирования различных веб-приложений и мобильных приложений в рамках обучения.</p>
-          <ul class="project-features">
+    <section id="skills" class="content-section fade-in">
+      <h2 class="section-title">Навыки и технологии</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>🛠️ Инструменты</h3>
+          <ul class="skill-list">
+            <li data-tool="Jira" data-company="Atlassian">Jira</li>
+            <li data-tool="Confluence" data-company="Atlassian">Confluence</li>
+            <li data-tool="TestRail" data-company="Gurock">TestRail</li>
+            <li data-tool="Allure" data-company="Qameta">Allure</li>
+            <li data-tool="Postman" data-company="Postman Inc">Postman</li>
+            <li data-tool="Charles Proxy" data-company="Charles Proxy">Charles Proxy</li>
+            <li data-tool="Android Studio" data-company="Google">Android Studio</li>
+            <li data-tool="Chrome DevTools" data-company="Google">Chrome DevTools</li>
+            <li data-tool="Git/GitHub" data-company="Microsoft">Git, GitHub</li>
+            <li data-tool="Splunk" data-company="Splunk">Splunk</li>
+            <li data-tool="Grafana" data-company="Grafana Labs">Grafana</li>
+            <li data-tool="VS Code" data-company="Microsoft">VS Code</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3>🧪 Тестирование</h3>
+          <ul class="skill-list">
             <li>Функциональное тестирование</li>
+            <li>Регрессионное тестирование</li>
+            <li>Smoke / Sanity тестирование</li>
             <li>UI/UX тестирование</li>
-            <li>Написание тест-кейсов</li>
-            <li>Составление баг-репортов</li>
+            <li>Мобильное тестирование (iOS/Android)</li>
+            <li>Тестирование API / бэкенда</li>
+            <li>Составление тест-кейсов и чек-листов</li>
+            <li>Баг-репорты (Jira)</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3>💻 Технические навыки</h3>
+          <ul class="skill-list">
+            <li>Основы HTML/CSS</li>
+            <li>SQL (SELECT, JOIN, WHERE)</li>
+            <li>Тестирование REST API (Postman)</li>
+            <li>Python (базовый уровень)</li>
+            <li>Чтение технической документации</li>
+            <li>Анализ сетевого трафика (Charles)</li>
+            <li>Мониторинг (Grafana, Splunk)</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3>🌐 Языки</h3>
+          <ul class="skill-list">
+            <li>Русский — родной</li>
+            <li>Английский — B2</li>
+            <li>Польский — C1</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Секция "Образование" -->
-    <section id="education" class="content-section fade-in">
-      <h2 class="section-title">Образование</h2>
-      
-      <!-- Основное образование -->
-      <div class="education-item">
-        <div class="education-header">
-          <h3>Курсы по тестированию ПО</h3>
-          <span class="education-date">Окт 2025 - Янв 2026</span>
+    <section id="projects" class="content-section fade-in">
+      <h2 class="section-title">Проекты</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Учебный проект (тимлид финального проекта)</h3>
+          <p>Разработала тест-план, распределила задачи, проверила работу команды и представила результаты стейкхолдерам. Провела функциональное, регрессионное и UI/UX тестирование веб-приложения.</p>
+          <ul class="project-features">
+            <li>Создание тест-кейсов и чек-листов</li>
+            <li>Оформление дефектов в Jira с подробными шагами и доказательствами</li>
+            <li>Использование Chrome DevTools для анализа сети и отладки</li>
+          </ul>
         </div>
-        <div class="education-institution">IT-Academy</div>
-        <p>Прохождение курсов по тестированию программного обеспечения. Изучение основ тестирования, методологий, инструментов и лучших практик в QA.</p>
-        <div class="education-details">
-          <span class="detail-tag">QA Fundamentals</span>
-          <span class="detail-tag">Manual Testing</span>
-          <span class="detail-tag">Test Design</span>
-          <span class="detail-tag">Certificate</span>
-          <span class="detail-tag">Online</span>
-        </div>
-      </div>
-
-      <div class="certificate-badge">
-  <a href="Elvira_Miadzvedzeva_IT-Academy_Software_Testing.pdf" target="_blank" class="certificate-link">
-    <span class="cert-icon">📜</span> Посмотреть сертификат (PDF)
-  </a>
-</div>
-
-      <!-- Самообразование -->
-      <div class="education-item">
-        <div class="education-header">
-          <h3>Активное самообразование</h3>
-          <span class="education-date">2025 - настоящее время</span>
-        </div>
-        <div class="education-institution">YouTube, Stepik, самостоятельное изучение</div>
-        <p>Постоянное развитие навыков через различные образовательные платформы и ресурсы:</p>
-        <ul class="self-education-list">
-          <li data-completed="true">Канал Артёма Русова - практические навыки тестирования</li>
-          <li data-completed="true">Курс "Тестирование ПО" на Stepik - углубленное изучение теории</li>
-          <li data-completed="true">Изучение Python - основы программирования для автоматизации тестов</li>
-          <li data-completed="true">Technical documentation - чтение и анализ технической документации</li>
-          <li data-completed="true">QA communities - участие в профессиональных сообществах</li>
-        </ul>
-        <div class="education-details">
-          <span class="detail-tag">YouTube</span>
-          <span class="detail-tag">Stepik</span>
-          <span class="detail-tag">edX</span>
-          <span class="detail-tag">Python</span>
-          <span class="detail-tag">Self education</span>
+        <div class="project-card">
+          <h3>Практика мобильного тестирования</h3>
+          <p>Тестирование мобильных приложений на iOS и Android в рамках стажировки.</p>
+          <ul class="project-features">
+            <li>Выполнено 400+ тест-кейсов на реальных устройствах/эмуляторах</li>
+            <li>Мониторинг сетевого трафика с помощью Charles Proxy</li>
+            <li>Документирование результатов в Allure</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- Секция "Контакты" -->
+    <section id="education" class="content-section fade-in">
+      <h2 class="section-title">Образование</h2>
+      <div class="education-item">
+        <div class="education-header">
+          <h3>Курс «Ручное тестирование ПО»</h3>
+          <span class="education-date">Окт 2025 - Янв 2026</span>
+        </div>
+        <div class="education-institution">IT-Academy</div>
+        <p>Завершила обучение по современным практикам ручного тестирования, тест-дизайну и управлению дефектами в Agile. Получен сертификат.</p>
+        <div class="certificate-badge">
+          <a href="Elvira_Miadzvedzeva_IT-Academy_Software_Testing.pdf" target="_blank" class="certificate-link">
+            <span class="cert-icon">📜</span> Посмотреть сертификат (PDF)
+          </a>
+        </div>
+        <div class="education-details">
+          <span class="detail-tag">STLC</span>
+          <span class="detail-tag">Тест-дизайн</span>
+          <span class="detail-tag">Jira</span>
+          <span class="detail-tag">Сертификат</span>
+        </div>
+      </div>
+      <div class="education-item">
+        <div class="education-header">
+          <h3>Самообразование</h3>
+          <span class="education-date">2025 - настоящее время</span>
+        </div>
+        <div class="education-institution">Онлайн-платформы и самостоятельное изучение</div>
+        <p>Постоянное развитие навыков:</p>
+        <ul class="self-education-list">
+          <li data-completed="true">Создание тестового фреймворка на Python + Pytest для REST API</li>
+          <li data-completed="true">Практика сложных SQL-запросов на реальных данных</li>
+          <li data-completed="true">Мобильное тестирование с Appium (в процессе)</li>
+          <li data-completed="true">Изучение инструментов нагрузочного тестирования</li>
+        </ul>
+        <div class="education-details">
+          <span class="detail-tag">Python</span>
+          <span class="detail-tag">SQL</span>
+          <span class="detail-tag">Appium</span>
+          <span class="detail-tag">Самообучение</span>
+        </div>
+      </div>
+    </section>
+
     <section id="contact" class="content-section fade-in">
       <h2 class="section-title">Контакты</h2>
       <div class="contact-grid">
-        <!-- Email с Gmail иконкой -->
         <a href="mailto:elvira.medvedeva.work@gmail.com" class="contact-card email-card">
           <div class="contact-header">
-            <svg class="brand-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-            </svg>
+            <svg class="brand-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
             <span>Email</span>
           </div>
           <span class="contact-detail">elvira.medvedeva.work@gmail.com</span>
         </a>
-
-        <!-- Телефон -->
         <a href="tel:+375291384080" class="contact-card phone-card">
           <div class="contact-header">
-            <svg class="brand-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-            </svg>
+            <svg class="brand-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
             <span>Телефон</span>
           </div>
           <span class="contact-detail">+375 29 138 40 80</span>
         </a>
-
-        <!-- LinkedIn -->
         <a href="https://www.linkedin.com/in/elviramiadzvedzeva" class="contact-card linkedin-card" target="_blank">
           <div class="contact-header">
-            <svg class="brand-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-            </svg>
+            <svg class="brand-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             <span>LinkedIn</span>
           </div>
           <span class="contact-detail">Эльвира Медведева</span>
         </a>
-
-        <!-- GitHub -->
         <a href="https://github.com/elviramedvedeva" class="contact-card github-card" target="_blank">
           <div class="contact-header">
-            <svg class="brand-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-            </svg>
+            <svg class="brand-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
             <span>GitHub</span>
           </div>
           <span class="contact-detail">elviramedvedeva</span>
         </a>
-
-        <!-- PDF -->
         <a href="Medvedeva_Elvira_CV_RU.pdf" download class="contact-card pdf-download">
           <div class="contact-header">
-            <svg class="brand-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
-            </svg>
+            <svg class="brand-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
             <span>Резюме PDF</span>
           </div>
           <span class="contact-detail">Скачать</span>
@@ -272,41 +241,20 @@
 
   <footer class="main-footer">
     <div class="container">
-      <p>Готовность к работе: <strong>немедленная</strong> | Формат: <strong>полный день, офис/гибрид/удалённо</strong></p>
-      
-      <!-- Блок "Протестировано на" -->
+      <p>Готовность к работе: <strong>немедленная</strong> | Формат: <strong>полный день, офис/гибрид/удалённо</strong> | Открыта к релокации в ЕС</p>
       <div class="testing-platforms">
         <p class="testing-title">🧪 Протестировано на:</p>
         <div class="platforms-grid">
-          <div class="platform-item" title="Google Chrome">
-            <span class="platform-icon" aria-hidden="true">🌐</span>
-            <span class="platform-name">Chrome</span>
-          </div>
-          <div class="platform-item" title="Mozilla Firefox">
-            <span class="platform-icon" aria-hidden="true">🦊</span>
-            <span class="platform-name">Firefox</span>
-          </div>
-          <div class="platform-item" title="Apple Safari">
-            <span class="platform-icon" aria-hidden="true">🍎</span>
-            <span class="platform-name">Safari</span>
-          </div>
-          <div class="platform-item" title="Microsoft Windows">
-            <span class="platform-icon" aria-hidden="true">🪟</span>
-            <span class="platform-name">Windows</span>
-          </div>
-          <div class="platform-item" title="Apple iOS">
-            <span class="platform-icon" aria-hidden="true">📱</span>
-            <span class="platform-name">iOS</span>
-          </div>
-          <div class="platform-item" title="Google Android">
-            <span class="platform-icon" aria-hidden="true">🤖</span>
-            <span class="platform-name">Android</span>
-          </div>
+          <div class="platform-item" title="Google Chrome"><span class="platform-icon">🌐</span><span class="platform-name">Chrome</span></div>
+          <div class="platform-item" title="Mozilla Firefox"><span class="platform-icon">🦊</span><span class="platform-name">Firefox</span></div>
+          <div class="platform-item" title="Apple Safari"><span class="platform-icon">🍎</span><span class="platform-name">Safari</span></div>
+          <div class="platform-item" title="Microsoft Windows"><span class="platform-icon">🪟</span><span class="platform-name">Windows</span></div>
+          <div class="platform-item" title="Apple iOS"><span class="platform-icon">📱</span><span class="platform-name">iOS</span></div>
+          <div class="platform-item" title="Google Android"><span class="platform-icon">🤖</span><span class="platform-name">Android</span></div>
         </div>
       </div>
-
       <p class="career-goal-footer">🔎 Ищу стажировку или junior-позицию в QA</p>
-      <p class="footer-copyright">© 2025 - 2026 Эльвира Медведева</p>
+      <p class="footer-copyright">© 2026 Эльвира Медведева</p>
     </div>
   </footer>
   

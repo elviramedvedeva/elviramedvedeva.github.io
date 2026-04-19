@@ -1232,11 +1232,9 @@ main {
   left: 100%;
 }
 
-/* Content fade animation */
-.content-section {
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
+/* ... (весь предыдущий CSS остаётся, добавляем новые блоки) ... */
 
+/* Certificate badge */
 .certificate-badge {
   margin: 1rem 0 0.5rem;
 }
@@ -1265,6 +1263,7 @@ main {
 .cert-icon {
   font-size: 1.2rem;
 }
+
 /* Experience section */
 .experience-item {
   background: var(--bg-light);
@@ -1325,3 +1324,15 @@ main {
   color: var(--accent-color);
   font-weight: bold;
 }
+
+/* Улучшенная адаптивность для новых секций */
+@media (max-width: 768px) {
+  .experience-item {
+    padding: 1.5rem;
+  }
+  .certificate-link {
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
