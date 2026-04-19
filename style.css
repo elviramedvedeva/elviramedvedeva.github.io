@@ -1236,3 +1236,92 @@ main {
 .content-section {
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
+
+.certificate-badge {
+  margin: 1rem 0 0.5rem;
+}
+
+.certificate-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.certificate-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(245, 158, 11, 0.3);
+  background: linear-gradient(135deg, #d97706, #b45309);
+}
+
+.cert-icon {
+  font-size: 1.2rem;
+}
+/* Experience section */
+.experience-item {
+  background: var(--bg-light);
+  padding: 2rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.experience-header h3 {
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.experience-date {
+  background: var(--primary-color);
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.experience-company {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  color: var(--text-dark);
+}
+
+.experience-list {
+  list-style: none;
+}
+
+.experience-list li {
+  padding: 0.5rem 0 0.5rem 1.8rem;
+  position: relative;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.experience-list li:last-child {
+  border-bottom: none;
+}
+
+.experience-list li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+  font-weight: bold;
+}
