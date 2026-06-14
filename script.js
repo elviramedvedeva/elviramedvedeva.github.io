@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          observer.unobserve(entry.target); // ✅ Отписка после анимации
+          observer.unobserve(entry.target); // отписка после анимации
         }
       });
     }, { 
@@ -73,7 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
       rootMargin: '0px 0px -30px 0px' 
     });
 
-    const animatedElements = document.querySelectorAll('.content-section, .project-card, .skill-category, .education-item, .highlight-card');
+    // Добавлены .experience-item
+    const animatedElements = document.querySelectorAll('.content-section, .project-card, .skill-category, .education-item, .experience-item, .highlight-card');
     animatedElements.forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(30px)';
