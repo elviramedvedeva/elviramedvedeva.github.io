@@ -27,6 +27,7 @@ body {
   line-height: 1.6;
   color: var(--text-dark);
   background: var(--bg-light);
+  font-size: 18px; /* Increased base font size for better readability */
 }
 
 .container {
@@ -146,15 +147,15 @@ body {
   border-radius: 2px;
 }
 
-/* ===== HIGHLIGHTS (карточки качеств) ===== */
-.highlights-grid {
+/* ===== HIGHLIGHTS (Fixed class names to match HTML) ===== */
+.highlights {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1rem;
   margin-top: 1.5rem;
 }
 
-.highlight-card {
+.highlight-item {
   background: var(--bg-light);
   padding: 1.2rem 1rem;
   border-radius: 12px;
@@ -169,18 +170,18 @@ body {
   transition: all 0.3s ease;
 }
 
-.highlight-card:hover {
+.highlight-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(37, 99, 235, 0.15);
   border-color: var(--primary-color);
 }
 
-.highlight-icon {
+.highlight-item span {
   font-size: 2rem;
   transition: transform 0.3s ease;
 }
 
-.highlight-card:hover .highlight-icon {
+.highlight-item:hover span {
   transform: scale(1.2) rotate(5deg);
 }
 
@@ -221,7 +222,7 @@ body {
   border-bottom: none;
 }
 
-/* Tooltips для инструментов */
+/* Tooltips for tools */
 .skill-list li[data-tool] {
   position: relative;
   cursor: help;
@@ -257,34 +258,7 @@ body {
   }
 }
 
-/* Интерактивные теги навыков (для будущего использования) */
-.skill-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-top: 1rem;
-}
-
-.skill-tag {
-  background: var(--bg-white);
-  border: 1px solid var(--border-color);
-  padding: 0.4rem 0.9rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  transition: all 0.3s;
-  cursor: default;
-}
-
-.skill-tag:hover {
-  background: var(--primary-color);
-  color: white;
-  border-color: var(--primary-color);
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
-}
-
-/* ===== PROJECTS / EXPERIENCE / EDUCATION ===== */
+/* ===== PROJECTS (Fixed to style direct children of .project-card) ===== */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -305,34 +279,31 @@ body {
   border-color: var(--primary-color);
 }
 
-.project-header {
+.project-card h3 {
   background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
   color: white;
   padding: 1.2rem 1.5rem;
-}
-
-.project-header h3 {
   margin: 0;
-  color: white;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
-.project-body {
-  padding: 1.5rem;
+.project-card p {
+  padding: 1rem 1.5rem 0;
 }
 
-.project-features {
+.project-card ul {
   list-style: none;
-  margin-top: 1rem;
+  padding: 0 1.5rem 1.5rem;
+  margin-top: 0.5rem;
 }
 
-.project-features li {
-  padding: 0.5rem 0 0.5rem 1.5rem;
+.project-card ul li {
+  padding: 0.4rem 0 0.4rem 1.5rem;
   position: relative;
   font-size: 0.95rem;
 }
 
-.project-features li::before {
+.project-card ul li::before {
   content: '▹';
   position: absolute;
   left: 0;
@@ -355,11 +326,12 @@ body {
   transform: translateY(-5px);
 }
 
-.experience-header,
-.education-header {
+.experience-header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .experience-company {
@@ -376,11 +348,12 @@ body {
   font-size: 1.1rem;
 }
 
-.experience-list {
+.experience-list, .self-edu-list {
   list-style: none;
+  margin-top: 1rem;
 }
 
-.experience-list li {
+.experience-list li, .self-edu-list li {
   padding: 0.5rem 0 0.5rem 1.8rem;
   position: relative;
 }
@@ -392,16 +365,6 @@ body {
   color: var(--accent-color);
 }
 
-.self-edu-list {
-  list-style: none;
-  margin-top: 1rem;
-}
-
-.self-edu-list li {
-  padding: 0.3rem 0 0.3rem 1.8rem;
-  position: relative;
-}
-
 .self-edu-list li::before {
   content: '✓';
   position: absolute;
@@ -409,7 +372,7 @@ body {
   color: var(--accent-color);
 }
 
-/* Кнопка сертификата */
+/* Certificate button */
 .certificate-btn {
   display: inline-flex;
   align-items: center;
@@ -449,18 +412,10 @@ body {
   text-align: center;
 }
 
-.email-card {
-  background: linear-gradient(135deg, #ea4335, #d14836);
-}
-.phone-card {
-  background: linear-gradient(135deg, #34a853, #2e8b47);
-}
-.linkedin-card {
-  background: #0077b5;
-}
-.github-card {
-  background: #333;
-}
+.email-card { background: linear-gradient(135deg, #ea4335, #d14836); }
+.phone-card { background: linear-gradient(135deg, #34a853, #2e8b47); }
+.linkedin-card { background: #0077b5; }
+.github-card { background: #333; }
 
 .contact-detail {
   word-break: break-word;
@@ -476,40 +431,47 @@ body {
 }
 
 @media (max-width: 480px) {
-  .email-card .contact-detail {
-    font-size: 0.7rem;
-  }
+  .email-card .contact-detail { font-size: 0.7rem; }
 }
 
-/* Выпадающее меню CV (снизу вверх) */
-.cv-download-wrapper {
-  position: relative;
-}
-
-.cv-dropdown {
+/* ===== DROPDOWN CV (Fixed class names to match HTML) ===== */
+.dropdown-card {
   background: linear-gradient(135deg, var(--accent-color), #d97706);
+  position: relative;
+  min-height: auto;
+  padding: 0;
+  overflow: visible; 
+}
+
+.dropdown-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.dropdown-btn {
+  background: transparent;
   color: white;
-  padding: 1rem;
-  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  border: none;
+  width: 100%;
   cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  font-weight: 600;
+  border-radius: 15px;
   transition: all 0.3s;
-  border: none;
-  width: 100%;
 }
 
-.cv-dropdown:hover {
+.dropdown-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
 }
 
-.cv-menu {
+.dropdown-menu {
   position: absolute;
-  bottom: calc(100% + 8px);
+  bottom: calc(100% + 8px); /* Opens upwards */
   left: 0;
   right: 0;
   background: var(--bg-white);
@@ -523,13 +485,22 @@ body {
   z-index: 100;
 }
 
-.cv-dropdown-wrapper:hover .cv-menu {
+/* Opens on hover (desktop) and focus (keyboard) */
+.dropdown-wrapper:hover .dropdown-menu,
+.dropdown-wrapper:focus-within .dropdown-menu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
 
-.cv-menu a {
+/* Opens on click (mobile) */
+.dropdown-wrapper.active .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu a {
   display: flex;
   align-items: center;
   gap: 0.8rem;
@@ -540,18 +511,12 @@ body {
   transition: all 0.2s;
 }
 
-.cv-menu a:last-child {
-  border-bottom: none;
-}
+.dropdown-menu a:last-child { border-bottom: none; }
 
-.cv-menu a:hover {
+.dropdown-menu a:hover {
   background: var(--bg-light);
   color: var(--primary-color);
   padding-left: 1.5rem;
-}
-
-.cv-menu .flag {
-  font-size: 1.2rem;
 }
 
 /* ===== FOOTER ===== */
@@ -563,9 +528,7 @@ body {
   margin-top: 3rem;
 }
 
-.testing-platforms {
-  margin: 2rem 0;
-}
+.testing-platforms { margin: 2rem 0; }
 
 .platforms-grid {
   display: grid;
@@ -579,9 +542,20 @@ body {
   border-radius: 12px;
 }
 
+.career-goal-footer {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.footer-copyright {
+  opacity: 0.6;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
 /* ===== CONTROLS ===== */
-.theme-toggle,
-.lang-btn {
+.theme-toggle, .lang-btn {
   width: 44px;
   height: 44px;
   display: flex;
@@ -629,18 +603,11 @@ body {
 }
 
 /* ===== MOBILE MENU ===== */
-.menu-toggle {
-  display: none;
-}
+.menu-toggle { display: none; }
 
 @media (max-width: 768px) {
-  .container {
-    padding: 0 1rem;
-  }
-
-  .main-title {
-    font-size: 2.2rem;
-  }
+  .container { padding: 0 1rem; }
+  .main-title { font-size: 2.2rem; }
 
   .menu-toggle {
     display: flex;
@@ -676,9 +643,7 @@ body {
     z-index: 999;
   }
 
-  .main-nav.active {
-    display: flex;
-  }
+  .main-nav.active { display: flex; }
 }
 
 /* ===== DARK THEME ===== */
@@ -697,41 +662,21 @@ body {
   border-top: 1px solid #334155;
 }
 
-.dark-theme .cv-menu {
+.dark-theme .dropdown-menu {
   background: var(--bg-white);
   border: 1px solid var(--border-color);
 }
 
-.dark-theme .cv-menu a {
-  color: var(--text-light);
-}
+.dark-theme .dropdown-menu a { color: var(--text-light); }
 
-.dark-theme .cv-menu a:hover {
+.dark-theme .dropdown-menu a:hover {
   background: var(--bg-light);
   color: var(--primary-color);
 }
 
-.dark-theme .language-switcher {
-  background: rgba(15, 23, 42, 0.9);
-}
-
-.dark-theme .lang-btn {
-  color: var(--text-light);
-}
-
-.dark-theme .lang-btn.active {
-  color: white;
-}
-
-.dark-theme .skill-tag {
-  background: var(--bg-light);
-  color: var(--text-light);
-}
-
-.dark-theme .skill-tag:hover {
-  background: var(--primary-color);
-  color: white;
-}
+.dark-theme .language-switcher { background: rgba(15, 23, 42, 0.9); }
+.dark-theme .lang-btn { color: var(--text-light); }
+.dark-theme .lang-btn.active { color: white; }
 
 /* ===== ANIMATIONS ===== */
 .content-section,
@@ -739,7 +684,7 @@ body {
 .skill-category,
 .education-item,
 .experience-item,
-.highlight-card {
+.highlight-item { /* Changed from .highlight-card */
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
@@ -750,7 +695,7 @@ body {
 .skill-category.visible,
 .education-item.visible,
 .experience-item.visible,
-.highlight-card.visible {
+.highlight-item.visible { /* Changed from .highlight-card */
   opacity: 1;
   transform: translateY(0);
 }
