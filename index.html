@@ -3,53 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Junior QA Engineer | Manual & API Testing | Python basics | Open to Relocation EU">
-<meta property="og:title" content="Elvira Medvedeva - QA Portfolio">
-<meta property="og:description" content="QA Engineer specializing in manual testing, API validation, and mobile QA">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://elviramedvedeva.github.io/">
-<link rel="canonical" href="https://elviramedvedeva.github.io/">
-  <title>Elvira Medvedeva - QA Engineer</title>
-  <meta name="description" content="Junior QA Engineer | Manual & API Testing | Python basics | Open to Relocation EU">
-  <meta property="og:title" content="Elvira Medvedeva - QA Portfolio">
-  <meta property="og:description" content="QA Engineer specializing in manual testing, API validation, and mobile QA.">
+
+  <title>Elvira Medvedeva — QA Engineer Portfolio</title>
+
+  <meta name="description" content="Junior QA Engineer specializing in manual testing, API validation, mobile QA, SQL, and test documentation. Open to relocation (EU).">
+
+  <!-- OpenGraph -->
+  <meta property="og:title" content="Elvira Medvedeva — QA Engineer Portfolio">
+  <meta property="og:description" content="Manual QA, API testing, mobile testing, SQL, test design, documentation.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://elviramedvedeva.github.io/">
+
+  <!-- Canonical -->
   <link rel="canonical" href="https://elviramedvedeva.github.io/">
-  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='15' fill='%232563eb'/%3E%3Ctext x='50' y='68' font-family='Arial, sans-serif' font-size='36' font-weight='bold' text-anchor='middle' fill='white'%3EQA%3C/text%3E%3C/svg%3E">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='15' fill='%232563eb'/%3E%3Ctext x='50' y='68' font-family='Arial, sans-serif' font-size='36' font-weight='bold' text-anchor='middle' fill='white'%3EQA%3C/text%3E%3C/svg%3E">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="style.css"></noscript>
-<script src="script.js" defer></script>
+  <noscript><link rel="stylesheet" href="style.css"></noscript>
+
+  <!-- JS -->
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <header class="main-header">
-    <div class="language-switcher">
-      <a href="index.html" class="lang-btn active">EN</a>
-      <a href="index_ru.html" class="lang-btn">RU</a>
-      <a href="index_pl.html" class="lang-btn">PL</a>
-    </div>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-      <span class="theme-icon">🌙</span>
-    </button>
+  <header class="main-header" aria-label="Site header">
     <div class="container">
-      <img src="elvira.jpg" alt="Elvira Medvedeva" class="profile-photo" width="150" height="150">
-      <h1 class="main-title">Elvira Medvedeva</h1>
-      <p class="subtitle">QA Engineer (Trainee/Junior)</p>
-      <div class="career-goal">
-        <p>🔎 Seeking internship or junior QA position. Ready to learn, work in team and grow in software testing.</p>
+
+      <div class="top-controls">
+        <nav class="language-switcher" aria-label="Language selector">
+          <a href="index.html" class="lang-btn active">EN</a>
+          <a href="index_ru.html" class="lang-btn" hreflang="ru">RU</a>
+          <a href="index_pl.html" class="lang-btn" hreflang="pl">PL</a>
+        </nav>
+
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="theme-icon">🌙</span>
+        </button>
       </div>
-      <div class="contact-info">
-        <span class="contact-item">📍 Grodno/Minsk, Belarus (open to relocation EU)</span>
-        <span class="contact-item">📧 <a href="mailto:elvira.medvedeva.work@gmail.com">elvira.medvedeva.work@gmail.com</a></span>
+
+      <div class="profile-block">
+        <img src="elvira.jpg" alt="Elvira Medvedeva" class="profile-photo" width="150" height="150" loading="lazy">
+        <h1 class="main-title">Elvira Medvedeva</h1>
+        <p class="subtitle">QA Engineer (Trainee/Junior)</p>
+        <p class="career-goal">🔎 Seeking internship or junior QA position. Ready to learn, work in team and grow in software testing.</p>
+
+        <div class="contact-info">
+          <span>📍 Grodno/Minsk, Belarus (open to relocation EU)</span>
+          <span>📧 <a href="mailto:elvira.medvedeva.work@gmail.com">elvira.medvedeva.work@gmail.com</a></span>
+        </div>
       </div>
-      <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
-      <nav class="main-nav">
-        <a href="#about" class="nav-link">About</a>
-        <a href="#experience" class="nav-link">Experience</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#education" class="nav-link">Education</a>
-        <a href="#contact" class="nav-link">Contact</a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
       </nav>
     </div>
   </header>
@@ -58,17 +76,17 @@
     <section id="about" class="content-section">
       <h2 class="section-title">About Me</h2>
       <p>Detail-oriented QA Engineer with hands-on experience in backend, mobile, and web testing. Currently an intern at IDT Company, executing 300+ test cases documented in Allure and developing 35+ automated tests for Postman collections. Completed formal training in STLC, test design, and defect management. Seeking a Junior QA role to apply analytical skills and a quality-focused mindset.</p>
-      <div class="highlights">
-        <div class="highlight-item"><span>🎯</span> Goal-oriented</div>
-        <div class="highlight-item"><span>🔍</span> Attention to detail</div>
-        <div class="highlight-item"><span>📚</span> Fast learner</div>
-        <div class="highlight-item"><span>🤝</span> Team player</div>
-      </div>
+      <ul class="highlights">
+        <li class="highlight-item">🎯 Goal-oriented</li>
+        <li class="highlight-item">🔍 Attention to detail</li>
+        <li class="highlight-item">📚 Fast learner</li>
+        <li class="highlight-item">🤝 Team player</li>
+      </ul>
     </section>
 
     <section id="experience" class="content-section">
       <h2 class="section-title">Work Experience</h2>
-      <div class="experience-item">
+      <article class="experience-item">
         <div class="experience-header">
           <h3>Manual QA Intern</h3>
           <span class="experience-date">Feb 2026 - Present</span>
@@ -83,13 +101,14 @@
           <li>Collaborate with development team via Jira and Confluence; manage test documentation in TestRail.</li>
           <li>Work with internal Admin UI to configure test environments and verify backend changes.</li>
         </ul>
-      </div>
+      </article>
     </section>
 
     <section id="skills" class="content-section">
       <h2 class="section-title">Skills & Technologies</h2>
       <div class="skills-grid">
-        <div class="skill-category"><h3>🛠️ Tools</h3>
+        <div class="skill-category">
+          <h3>🛠️ Tools</h3>
           <ul class="skill-list">
             <li data-tool="Jira" data-company="Atlassian">Jira</li>
             <li data-tool="Confluence" data-company="Atlassian">Confluence</li>
@@ -97,10 +116,11 @@
             <li data-tool="Allure" data-company="Qameta">Allure</li>
             <li data-tool="Postman" data-company="Postman Inc">Postman</li>
             <li data-tool="Swagger" data-company="SmartBear">Swagger</li>
-            <li data-tool="Charles Proxy" data-company="Charles Proxy">Charles</li>
+            <li data-tool="Charles Proxy" data-company="Charles Proxy">Charles Proxy</li>
             <li data-tool="Android Studio" data-company="Google">Android Studio</li>
-            <li data-tool="Chrome DevTools" data-company="Google">DevTools</li>
-            <li data-tool="Git/GitHub" data-company="Microsoft">Git, GitHub</li>
+            <li data-tool="Chrome DevTools" data-company="Google">Chrome DevTools</li>
+            <li data-tool="Git" data-company="Open Source">Git</li>
+            <li data-tool="GitHub" data-company="Microsoft">GitHub</li>
             <li data-tool="Grafana" data-company="Grafana Labs">Grafana</li>
             <li data-tool="Kafka" data-company="Apache">Kafka</li>
             <li data-tool="Splunk" data-company="Splunk">Splunk</li>
@@ -108,22 +128,39 @@
             <li data-tool="VS Code" data-company="Microsoft">VS Code</li>
           </ul>
         </div>
-        <div class="skill-category"><h3>🧪 QA & Testing</h3>
+
+        <div class="skill-category">
+          <h3>🧪 QA & Testing</h3>
           <ul class="skill-list">
-            <li>Functional Testing</li><li>Regression Testing</li><li>Smoke/Sanity Testing</li>
-            <li>UI/UX Testing</li><li>Mobile Testing (iOS/Android)</li><li>Backend/API Testing</li>
-            <li>Test Cases & Checklists</li><li>Bug Reporting (Jira)</li>
+            <li>Functional Testing</li>
+            <li>Regression Testing</li>
+            <li>Smoke & Sanity Testing</li>
+            <li>UI/UX Testing</li>
+            <li>Mobile Testing (iOS/Android)</li>
+            <li>Backend/API Testing</li>
+            <li>Test Cases & Checklists</li>
+            <li>Bug Reporting (Jira)</li>
           </ul>
         </div>
-        <div class="skill-category"><h3>💻 Technical</h3>
+
+        <div class="skill-category">
+          <h3>💻 Technical</h3>
           <ul class="skill-list">
-            <li>HTML/CSS Basics</li><li>SQL (SELECT, JOIN, WHERE)</li><li>REST API Testing</li>
-            <li>Python (Fundamentals)</li><li>Technical Documentation</li><li>Network Analysis</li>
+            <li>HTML/CSS Basics</li>
+            <li>SQL (SELECT, JOIN, WHERE)</li>
+            <li>REST API Testing</li>
+            <li>Python (Fundamentals)</li>
+            <li>Technical Documentation</li>
+            <li>Network Analysis</li>
           </ul>
         </div>
-        <div class="skill-category"><h3>🌐 Languages</h3>
+
+        <div class="skill-category">
+          <h3>🌐 Languages</h3>
           <ul class="skill-list">
-            <li>Russian - Native</li><li>English - B2 (Professional Working)</li><li>Polish - C1</li>
+            <li>Russian - Native</li>
+            <li>English - B2 (Professional Working)</li>
+            <li>Polish - C1</li>
           </ul>
         </div>
       </div>
@@ -132,29 +169,44 @@
     <section id="projects" class="content-section">
       <h2 class="section-title">Projects</h2>
       <div class="projects-grid">
-        <div class="project-card">
+        <article class="project-card">
           <h3>Educational QA Project (Team Lead)</h3>
           <p>Developed test plan, assigned tasks, reviewed work, and presented results. Performed functional, regression, and UI/UX testing of a web app.</p>
-          <ul><li>Created test cases and checklists</li><li>Reported defects in Jira with evidence</li><li>Used Chrome DevTools for debugging</li></ul>
-        </div>
-        <div class="project-card">
+          <ul>
+            <li>Created test cases and checklists</li>
+            <li>Reported defects in Jira with evidence</li>
+            <li>Used Chrome DevTools for debugging</li>
+          </ul>
+        </article>
+        <article class="project-card">
           <h3>Mobile Testing Practice</h3>
           <p>Tested mobile apps on iOS and Android as part of internship.</p>
-          <ul><li>Executed 300+ test cases</li><li>Monitored traffic with Charles Proxy</li><li>Documented results in Allure</li></ul>
-        </div>
+          <ul>
+            <li>Executed 300+ test cases</li>
+            <li>Monitored traffic with Charles Proxy</li>
+            <li>Documented results in Allure</li>
+          </ul>
+        </article>
       </div>
     </section>
 
     <section id="education" class="content-section">
       <h2 class="section-title">Education</h2>
-      <div class="education-item">
-        <div class="experience-header"><h3>Software Testing Course</h3><span class="experience-date">Oct 2025 - Jan 2026</span></div>
+      <article class="education-item">
+        <div class="experience-header">
+          <h3>Software Testing Course</h3>
+          <span class="experience-date">Oct 2025 - Jan 2026</span>
+        </div>
         <div class="experience-company">IT-Academy</div>
         <p>Completed program focused on manual testing, test design, and defect management in Agile. Certificate obtained.</p>
-        <a href="Elvira_Miadzvedzeva_IT-Academy_Software_Testing.pdf" class="certificate-btn" target="_blank" rel="noopener">📜 View Certificate (PDF)</a>
-      </div>
-      <div class="education-item">
-        <div class="experience-header"><h3>Self-Education</h3><span class="experience-date">2025 - Present</span></div>
+        <a href="Elvira_Miadzvedzeva_IT-Academy_Software_Testing.pdf" class="certificate-btn" target="_blank" rel="noopener noreferrer" aria-label="View Software Testing Certificate (PDF)">📜 View Certificate (PDF)</a>
+      </article>
+
+      <article class="education-item">
+        <div class="experience-header">
+          <h3>Self-Education</h3>
+          <span class="experience-date">2025 - Present</span>
+        </div>
         <p>Continuous learning via:</p>
         <ul class="self-edu-list">
           <li>Artem Rusov channel - practical testing skills</li>
@@ -163,19 +215,37 @@
           <li>Technical documentation reading and analysis</li>
           <li>QA communities participation</li>
         </ul>
-      </div>
+      </article>
     </section>
 
     <section id="contact" class="content-section">
       <h2 class="section-title">Contact Me</h2>
       <div class="contact-grid">
-        <a href="mailto:elvira.medvedeva.work@gmail.com" class="contact-card email-card"><span>📧</span><span>Email</span><span class="contact-detail">elvira.medvedeva.work@gmail.com</span></a>
-        <a href="tel:+375291384080" class="contact-card phone-card"><span>📱</span><span>Phone</span><span class="contact-detail">+375 29 138 40 80</span></a>
-        <a href="https://linkedin.com/in/elviramiadzvedzeva" target="_blank" class="contact-card linkedin-card"><span>💼</span><span>LinkedIn</span><span class="contact-detail">Elvira Medvedeva</span></a>
-        <a href="https://github.com/elviramedvedeva" target="_blank" class="contact-card github-card"><span>💻</span><span>GitHub</span><span class="contact-detail">elviramedvedeva</span></a>
+        <a href="mailto:elvira.medvedeva.work@gmail.com" class="contact-card email-card" aria-label="Send email to Elvira Medvedeva">
+          <span>📧</span>
+          <span>Email</span>
+          <span class="contact-detail">elvira.medvedeva.work@gmail.com</span>
+        </a>
+        <a href="tel:+375291384080" class="contact-card phone-card" aria-label="Call Elvira Medvedeva">
+          <span>📱</span>
+          <span>Phone</span>
+          <span class="contact-detail">+375 29 138 40 80</span>
+        </a>
+        <a href="https://linkedin.com/in/elviramiadzvedzeva" target="_blank" rel="noopener" class="contact-card linkedin-card" aria-label="Open LinkedIn profile">
+          <span>💼</span>
+          <span>LinkedIn</span>
+          <span class="contact-detail">Elvira Medvedeva</span>
+        </a>
+        <a href="https://github.com/elviramedvedeva" target="_blank" rel="noopener" class="contact-card github-card" aria-label="Open GitHub profile">
+          <span>💻</span>
+          <span>GitHub</span>
+          <span class="contact-detail">elviramedvedeva</span>
+        </a>
         <div class="contact-card dropdown-card">
           <div class="dropdown-wrapper">
-            <button class="dropdown-btn"><span>📄</span> Download CV ▼</button>
+            <button class="dropdown-btn" aria-expanded="false" aria-haspopup="true">
+              <span>📄</span> Download CV ▼
+            </button>
             <div class="dropdown-menu">
               <a href="Medvedeva_Elvira_QA_CV_EN.pdf" download>🇬🇧 English (PDF)</a>
               <a href="Medvedeva_Elvira_CV_RU.pdf" download>🇷🇺 Русский (PDF)</a>
@@ -187,16 +257,26 @@
     </section>
   </main>
 
-  <footer class="main-footer">
+  <footer class="main-footer" aria-label="Site footer">
     <div class="container">
-      <p>Availability: <strong>immediate</strong> | Format: <strong>full-time, office/hybrid/remote</strong> | Open to relocation EU</p>
-      <div class="testing-platforms">
-        <div class="testing-title">🧪 Tested on:</div>
-        <div class="platforms-grid">
-          <div class="platform-item">🌐 Chrome</div><div class="platform-item">🦊 Firefox</div><div class="platform-item">🍎 Safari</div>
-          <div class="platform-item">🪟 Windows</div><div class="platform-item">📱 iOS</div><div class="platform-item">🤖 Android</div>
-        </div>
-      </div>
+      <section class="footer-availability">
+        <p><strong>Availability:</strong> immediate</p>
+        <p><strong>Format:</strong> full-time, office/hybrid/remote</p>
+        <p><strong>Relocation:</strong> EU</p>
+      </section>
+
+      <section class="footer-platforms">
+        <h3 class="testing-title">🧪 Tested on:</h3>
+        <ul class="platforms-grid">
+          <li class="platform-item">🌐 Chrome</li>
+          <li class="platform-item">🦊 Firefox</li>
+          <li class="platform-item">🍎 Safari</li>
+          <li class="platform-item">🪟 Windows</li>
+          <li class="platform-item">📱 iOS</li>
+          <li class="platform-item">🤖 Android</li>
+        </ul>
+      </section>
+
       <p class="career-goal-footer">🔎 Seeking internship or junior QA position</p>
       <p class="footer-copyright">© 2026 Elvira Medvedeva</p>
     </div>

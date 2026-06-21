@@ -1,85 +1,100 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // === Проверка на уменьшение анимаций ===
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // === Theme toggle ===
+  // ============================
+  // 1. Theme Toggle (Light/Dark)
+  // ============================
+
   const themeToggle = document.getElementById('themeToggle');
-  if (themeToggle) {
-    const themeIcon = themeToggle.querySelector('.theme-icon');
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-      document.body.classList.add('dark-theme');
-      if (themeIcon) themeIcon.textContent = '☀️';
-    }
+  const savedTheme = localStorage.getItem('theme');
 
+  // Apply saved theme
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-theme');
+  }
+
+  if (themeToggle) {
     themeToggle.addEventListener('click', () => {
       document.body.classList.toggle('dark-theme');
-      const isDark = document.body.classList.contains('dark-theme');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      if (themeIcon) themeIcon.textContent = isDark ? '☀️' : '🌙';
+
+      // Save theme
+      if (document.body.classList.contains('dark-theme')) {
+        localStorage.setItem('theme', 'dark');
+      } else {
+        localStorage.setItem('theme', 'light');
+      }
     });
   }
 
-  // === Mobile menu ===
+  // ============================
+  // 2. Mobile Menu Toggle
+  // ============================
+
   const menuToggle = document.getElementById('menuToggle');
-  const mainNav = document.querySelector('.main-nav');
-  
-  if (menuToggle && mainNav) {
-    menuToggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      menuToggle.classList.toggle('active');
-      mainNav.classList.toggle('active');
+  const nav = document.querySelector('.main-nav');
+
+  if (menuToggle && nav) {
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      menuToggle.classList.toggle('open');
     });
 
-    mainNav.querySelectorAll('.nav-link').forEach(link => {
+    // Close menu when clicking a link
+    nav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        menuToggle.classList.remove('active');
-        mainNav.classList.remove('active');
+        nav.classList.remove('open');
+        menuToggle.classList.remove('open');
       });
     });
-
-    document.addEventListener('click', (e) => {
-      if (!mainNav.contains(e.target) && !menuToggle.contains(e.target)) {
-        menuToggle.classList.remove('active');
-        mainNav.classList.remove('active');
-      }
-    });
   }
 
-  // === Smooth scroll ===
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', (e) => {
-      e.preventDefault();
-      const target = document.querySelector(anchor.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
-      }
-    });
-  });
+  // ============================
+  // 3. Scroll Reveal Animations
+  // ============================
 
-  // === Fade-in animation (только если не prefers-reduced-motion) ===
-  if (!prefersReducedMotion) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
+  const animatedElements = document.querySelectorAll(
+    '.content-section, .project-card, .skill-category, .education-item, .experience-item, .highlight-card'
+  );
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          observer.unobserve(entry.target); // отписка после анимации
+          observer.unobserve(entry.target);
         }
       });
-    }, { 
-      threshold: 0.15, 
-      rootMargin: '0px 0px -30px 0px' 
+    }, { threshold: 0.2 });
+
+    animatedElements.forEach(el => observer.observe(el));
+  } else {
+    // If animations disabled → show everything immediately
+    animatedElements.forEach(el => el.classList.add('visible'));
+  }
+
+  // ============================
+  // 4. Dropdown for CV
+  // ============================
+
+  const dropdownBtn = document.querySelector('.dropdown-btn');
+  const dropdownMenu = document.querySelector('.dropdown-menu');
+
+  if (dropdownBtn && dropdownMenu) {
+    dropdownBtn.addEventListener('click', () => {
+      dropdownMenu.classList.toggle('open');
+
+      const expanded = dropdownMenu.classList.contains('open');
+      dropdownBtn.setAttribute('aria-expanded', expanded);
     });
 
-    // Добавлены .experience-item
-    const animatedElements = document.querySelectorAll('.content-section, .project-card, .skill-category, .education-item, .experience-item, .highlight-card');
-    animatedElements.forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(30px)';
-      el.style.transition = 'opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-      observer.observe(el);
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!dropdownMenu.contains(e.target) && !dropdownBtn.contains(e.target)) {
+        dropdownMenu.classList.remove('open');
+        dropdownBtn.setAttribute('aria-expanded', 'false');
+      }
     });
   }
+
 });
