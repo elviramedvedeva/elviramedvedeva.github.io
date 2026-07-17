@@ -64,6 +64,11 @@ HEADER
   display: block;
   box-shadow: var(--shadow-lg);
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.profile-photo:hover {
+  transform: scale(1.05);
 }
 
 .main-title {
@@ -99,6 +104,11 @@ HEADER
 .contact-info a {
   color: white;
   text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.contact-info a:hover {
+  opacity: 0.8;
 }
 
 /* ============================
@@ -118,13 +128,14 @@ NAVIGATION
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 50px;
   font-weight: 600;
-  transition: 0.3s;
+  transition: all 0.3s;
 }
 
 .nav-link:hover,
 .nav-link.active {
   background: white;
   color: var(--primary-color);
+  transform: translateY(-2px);
 }
 
 /* ============================
@@ -221,6 +232,11 @@ SKILLS
   padding: 0.6rem 0 0.6rem 1.8rem;
   border-bottom: 1px solid var(--border-color);
   position: relative;
+  transition: background 0.2s;
+}
+
+.skill-list li:hover {
+  background: rgba(37, 99, 235, 0.05);
 }
 
 .skill-list li::before {
@@ -439,6 +455,11 @@ CONTACT
   text-decoration: none;
   min-height: 140px;
   text-align: center;
+  transition: transform 0.3s;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
 }
 
 .email-card {
@@ -582,6 +603,11 @@ FOOTER
   background: rgba(255, 255, 255, 0.1);
   padding: 0.8rem;
   border-radius: 12px;
+  transition: background 0.3s;
+}
+
+.platform-item:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .career-goal-footer {
@@ -610,6 +636,7 @@ LANGUAGE & THEME BUTTONS
   padding: 0.4rem;
   border-radius: 25px;
   z-index: 1000;
+  box-shadow: var(--shadow);
 }
 
 .lang-btn {
@@ -619,6 +646,11 @@ LANGUAGE & THEME BUTTONS
   color: var(--text-dark);
   border: none;
   cursor: pointer;
+  transition: all 0.3s;
+}
+
+.lang-btn:hover {
+  background: rgba(37, 99, 235, 0.1);
 }
 
 .lang-btn.active {
@@ -638,6 +670,12 @@ LANGUAGE & THEME BUTTONS
   border: none;
   cursor: pointer;
   z-index: 1000;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s;
+}
+
+.theme-toggle:hover {
+  transform: rotate(180deg);
 }
 
 /* ============================
@@ -675,6 +713,19 @@ MOBILE MENU
     width: 20px;
     height: 2px;
     background: white;
+    transition: all 0.3s;
+  }
+
+  .menu-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
   }
 
   .main-nav {
