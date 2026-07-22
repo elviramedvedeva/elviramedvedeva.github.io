@@ -1,19 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // ============================
-  // 1. Theme Toggle (Light/Dark)
-  // ============================
-  const themeToggle = document.getElementById('themeToggle');
-  const themeIcon = themeToggle?.querySelector('.theme-icon');
-  const savedTheme = localStorage.getItem('theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  
-  // Apply saved theme or system preference
-  if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-    document.body.classList.add('dark-theme');
-    if (themeIcon) themeIcon.textContent = '☀️';
-  }
+  // === Проверка на уменьшение анимаций ===
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // === Theme toggle ===
+  const themeToggle = document.getElementById('themeToggle');
   if (themeToggle) {
+    const themeIcon = themeToggle.querySelector('.theme-icon');
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+      document.body.classList.add('dark-theme');
+      if (themeIcon) themeIcon.textContent = '☀️';
+    }
+
     themeToggle.addEventListener('click', () => {
       document.body.classList.toggle('dark-theme');
       const isDark = document.body.classList.contains('dark-theme');
@@ -22,100 +22,71 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ============================
-  // 2. Mobile Menu Toggle
-  // ============================
+  // === Mobile menu ===
   const menuToggle = document.getElementById('menuToggle');
-  const nav = document.querySelector('.main-nav');
+  const mainNav = document.querySelector('.main-nav');
   
-  if (menuToggle && nav) {
+  if (menuToggle && mainNav) {
     menuToggle.addEventListener('click', (e) => {
       e.stopPropagation();
-      nav.classList.toggle('open');
-      menuToggle.classList.toggle('open');
+      menuToggle.classList.toggle('active');
+      mainNav.classList.toggle('active');
     });
 
-    // Close menu when clicking a link
-    nav.querySelectorAll('a').forEach(link => {
+    mainNav.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => {
-        nav.classList.remove('open');
-        menuToggle.classList.remove('open');
+        menuToggle.classList.remove('active');
+        mainNav.classList.remove('active');
       });
     });
 
-    // Close menu when clicking outside
     document.addEventListener('click', (e) => {
-      if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
-        nav.classList.remove('open');
-        menuToggle.classList.remove('open');
+      if (!mainNav.contains(e.target) && !menuToggle.contains(e.target)) {
+        menuToggle.classList.remove('active');
+        mainNav.classList.remove('active');
       }
     });
   }
 
-  // ============================
-  // 3. Smooth Scroll
-  // ============================
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  
+  // === Smooth scroll ===
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
       e.preventDefault();
       const target = document.querySelector(anchor.getAttribute('href'));
       if (target) {
-        target.scrollIntoView({ 
-          behavior: prefersReducedMotion ? 'auto' : 'smooth', 
-          block: 'start' 
-        });
+        target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
       }
     });
   });
 
-  // ============================
-  // 4. Scroll Reveal Animations
-  // ============================
-  const animatedElements = document.querySelectorAll(
-    '.content-section, .project-card, .skill-category, .education-item, .experience-item, .highlight-item'
-  );
+  // === Fade-in animation ===
+  const animatedElements = document.querySelectorAll('.content-section, .project-card, .skill-category, .education-item, .experience-item, .highlight-card');
 
-  if (!prefersReducedMotion && 'IntersectionObserver' in window) {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
+  if (prefersReducedMotion) {
+    // Контент должен быть виден сразу, без анимации на основе IntersectionObserver
+    animatedElements.forEach(el => el.classList.add('visible'));
+  } else {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
+          // inline-стили, выставленные ниже при инициализации, перебивают CSS-класс .visible —
+          // поэтому снимаем их явно, а не полагаемся только на classList
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
           entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+          observer.unobserve(entry.target); // ✅ Отписка после анимации
         }
       });
-    }, { 
+    }, {
       threshold: 0.15,
       rootMargin: '0px 0px -30px 0px'
     });
 
-    animatedElements.forEach(el => observer.observe(el));
-  } else {
-    // If animations disabled → show everything immediately
-    animatedElements.forEach(el => el.classList.add('visible'));
-  }
-
-  // ============================
-  // 5. Dropdown for CV
-  // ============================
-  const dropdownBtn = document.querySelector('.dropdown-btn');
-  const dropdownMenu = document.querySelector('.dropdown-menu');
-  
-  if (dropdownBtn && dropdownMenu) {
-    dropdownBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      dropdownMenu.classList.toggle('open');
-      const expanded = dropdownMenu.classList.contains('open');
-      dropdownBtn.setAttribute('aria-expanded', expanded);
-    });
-
-    // Close dropdown when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!dropdownMenu.contains(e.target) && !dropdownBtn.contains(e.target)) {
-        dropdownMenu.classList.remove('open');
-        dropdownBtn.setAttribute('aria-expanded', 'false');
-      }
+    animatedElements.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+      observer.observe(el);
     });
   }
 });
